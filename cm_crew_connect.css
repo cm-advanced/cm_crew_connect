@@ -1,0 +1,21 @@
+.page-node-add-crew-connect-application h1{
+    Display: none;
+}
+
+.page-node-delete.node-type-crew-connect-request h1{
+    Display: none;
+}
+
+.page-node-delete.node-type-crew-connect-request .tabs-primary {
+    Display: none;
+}
+
+.page-node-delete.node-type-crew-connect-application h1{
+    Display: none;
+}
+
+.page-node-delete.node-type-crew-connect-application .tabs-primary {
+    Display: none;
+}
+
+

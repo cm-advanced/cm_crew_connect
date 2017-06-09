@@ -1,0 +1,60 @@
+<?php
+/**
+ * @file
+ * Implementes the CM Crew Connect Module
+ */
+
+/**
+ * Implements hook_menu()
+ */
+function cm_crew_connect_menu() {
+  $items = array();
+
+  $items['user/%/cm_crew_connect'] =
+    array(
+	  'title' => 'Crew Connect',
+	  'description' => 'Crew Connect',
+	  'access arguments' => array('access content'),
+	  'page callback' => 'cm_crew_connect_page',
+	  'page arguments'   => array(1),
+	  'type' => MENU_LOCAL_TASK,
+	  );
+
+  $items['crew-connect/requests-search'] =
+    array(
+	  'title' => 'Crew Connect Search',
+	  'description' => 'Crew Connect Search',
+	  'access arguments' => array('access content'),
+	  'page callback' => 'cm_crew_connect_search_page',
+	  'page arguments'   => array(1),
+	  'type' => MENU_CALLBACK,
+	  );
+
+  return $items;
+}
+
+/**                          
+ * Implements hook_init(). 
+ *
+ * Loads all the include files
+ */
+function cm_crew_connect_init() {
+  drupal_add_css(drupal_get_path('module', 'cm_crew_connect') .
+                 '/cm_crew_connect.css');
+
+  module_load_include('inc', 'cm_crew_connect', 'includes/computed_field');
+  module_load_include('inc', 'cm_crew_connect', 'includes/civicrm');
+  module_load_include('inc', 'cm_crew_connect', 'includes/form_alter');
+  module_load_include('inc', 'cm_crew_connect', 'includes/form');
+  module_load_include('inc', 'cm_crew_connect', 'includes/menu');
+  module_load_include('inc', 'cm_crew_connect', 'includes/misc');
+  module_load_include('inc', 'cm_crew_connect', 'includes/page');
+  module_load_include('inc', 'cm_crew_connect', 'includes/phpfields');
+  module_load_include('inc', 'cm_crew_connect', 'includes/postsave');
+  module_load_include('inc', 'cm_crew_connect', 'includes/presave');
+  module_load_include('inc', 'cm_crew_connect', 'includes/validate');
+  module_load_include('inc', 'cm_crew_connect', 'includes/view_util');
+}
+
+
+

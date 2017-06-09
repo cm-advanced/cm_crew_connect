@@ -1,0 +1,22 @@
+name = "CMA Crew Connect"
+description = "Provides helper files for managing crew connections. Relies on the Crew Request and Crew Application content types"
+
+files[] = includes/computed_field.inc
+files[] = includes/civicrm.inc
+files[] = includes/form_alter.inc
+files[] = includes/form.inc
+files[] = includes/menu.inc
+files[] = includes/misc.inc
+files[] = includes/page.inc
+files[] = includes/phpfields.inc
+files[] = includes/postsave.inc
+files[] = includes/presave.inc
+files[] = includes/validate.inc
+files[] = includes/view_util.inc
+
+
+package = "Community Media Advanced"
+version = "7.x-1.x"
+core = "7.x"
+project = "cm_crew_connect"
+project_status_url = https://github.com/cm-advanced/cm_crew_connect

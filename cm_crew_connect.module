@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Implementes the CM Crew Connect Module
+ * Implements the CM Crew Connect Module
  */
 
 /**
@@ -9,12 +9,30 @@
  */
 function cm_crew_connect_menu() {
   $items = array();
+  $items['admin/config/cm_crew_connect'] =
+    array(
+	  'title' => 'Crew Connect',
+	  'description' => t('Crew Connect Configuration'),
+	  'page callback' => 'cm_crew_connect_settings_home',
+	  'access arguments' => array('administer crew connect'),
+	  'type' => MENU_NORMAL_ITEM,
+	  );
 
+  $items['admin/config/cm_crew_connect/settings'] =
+    array(
+	 'title' => 'Crew Connect Configuration',
+	 'description' =>
+	 t('Set Position/Crew Type Mapping & CiviCRM EventType/Template IDs'),
+	 'page callback' => 'drupal_get_form',
+	 'page arguments' => array('cm_crew_connect_settings_form'),
+	 'access arguments' => array('administer crew connect'),
+	 );
+ 
   $items['user/%/cm_crew_connect'] =
     array(
 	  'title' => 'Crew Connect',
 	  'description' => 'Crew Connect',
-	  'access arguments' => array('access content'),
+	  'access arguments' => array('use crew connect'),
 	  'page callback' => 'cm_crew_connect_page',
 	  'page arguments'   => array(1),
 	  'type' => MENU_LOCAL_TASK,
@@ -24,9 +42,18 @@ function cm_crew_connect_menu() {
     array(
 	  'title' => 'Crew Connect Search',
 	  'description' => 'Crew Connect Search',
-	  'access arguments' => array('access content'),
+	  'access arguments' => array('use crew connect'),
 	  'page callback' => 'cm_crew_connect_search_page',
 	  'page arguments'   => array(1),
+	  'type' => MENU_CALLBACK,
+	  );
+
+  $items['admin/crew_connect/positions'] =
+    array(
+	  'title' => 'Get Available Positions for Opportunity Type',
+	  'access callback' => TRUE,
+	  'delivery callback' => 'drupal_json_output',
+	  'page callback' => 'cm_crew_connect_positions_for_opp_type_json',
 	  'type' => MENU_CALLBACK,
 	  );
 
@@ -45,16 +72,36 @@ function cm_crew_connect_init() {
   module_load_include('inc', 'cm_crew_connect', 'includes/computed_field');
   module_load_include('inc', 'cm_crew_connect', 'includes/civicrm');
   module_load_include('inc', 'cm_crew_connect', 'includes/form_alter');
-  module_load_include('inc', 'cm_crew_connect', 'includes/form');
-  module_load_include('inc', 'cm_crew_connect', 'includes/menu');
   module_load_include('inc', 'cm_crew_connect', 'includes/misc');
   module_load_include('inc', 'cm_crew_connect', 'includes/page');
   module_load_include('inc', 'cm_crew_connect', 'includes/phpfields');
   module_load_include('inc', 'cm_crew_connect', 'includes/postsave');
   module_load_include('inc', 'cm_crew_connect', 'includes/presave');
-  module_load_include('inc', 'cm_crew_connect', 'includes/validate');
-  module_load_include('inc', 'cm_crew_connect', 'includes/view_util');
+  module_load_include('inc', 'cm_crew_connect', 'includes/settings_form');
+  module_load_include('inc', 'cm_crew_connect', 'includes/rules_defaults');
 }
-
-
-
+function cm_crew_connect_permission() {
+  return
+    array(
+	  'administer crew connect' =>
+	  array(
+		'title' => t('Administer Crew Connect'),
+		),
+	  'use crew connect' =>
+	  array(
+		'title' => t('Crew Connect Tab On User Page'),
+		),
+	  );
+  
+}
+/**
+ * Implements hook_views_api
+ */
+function cm_crew_connect_views_api() {
+  return array(
+	       'api' => 3,
+	       'path' => 
+	       drupal_get_path('module', 
+			       'cm_crew_connect').'/includes'
+	       );
+}

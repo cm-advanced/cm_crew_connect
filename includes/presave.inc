@@ -14,99 +14,27 @@ function cm_crew_connect_node_presave($node) {
 
     //FETCH PROJECT AS IT WILL BE USED IN THE REQUEST TITLE
     $project = $project_nid ? node_load($project_nid) : NULL;
-    
-    //get teh civi template id from the field_tmp_crew_location field
-    $event_template_id = 
-      cm_crew_connect_get_single_field_value($node,
-					     'field_tmp_crew_location',
-					     'value');
- //   dsm("starting");
-
-    ////////////////////////////////////////////////////////////////////
-    //LOCATION
-    //FETCH CURRENT LOCATION
-    $location = 
-      cm_crew_connect_get_single_field_value($node,
-					     'field_crew_location',
-					     'value');
-
-    $location_field = field_info_field('field_tmp_crew_location');   
-    $allowed_values = list_allowed_values($location_field);
-
-    //CHECK FOR TMP LOCATION FIELDS
-    $tmp_location = 
-      cm_crew_connect_get_single_field_value($node,
-					     'field_tmp_crew_location',
-					     'value');
-    $location = $tmp_location ? $allowed_values[$tmp_location] : $location;
-    
-    $node->field_crew_location[LANGUAGE_NONE][0]['value'] = $location;
-    ///////////////////////////////////////////////////////////////////////
-    //POSITION
-
-    //FETCH CURRENT POSITION
-    $position = 
-      cm_crew_connect_get_single_field_value($node,
-					     'field_crew_positions',
-					     'value');
-
-    //CHECK FOR TMP POSITION FIELD
-    $index = count($allowed_values);
-    $new_position = '';
-
-    //THIS A HACK, I BUILD FIELD NAMES BY GOING OFF THE REVERSE ORDER OF 
-    //LOCATION FIELD
-    foreach ($allowed_values as $k=>$v) {
-      if ($k == $tmp_location) {
-	$field_name = 'field_tmp'.$index.'_crew_position';
-	$new_position = 
-	  cm_crew_connect_get_single_field_value($node,$field_name,'value');
-	break;
-      }
-      $index --;
-	    
-    }
-
-    $position = $new_position ? $new_position : $position;
-
-    $node->field_crew_positions[LANGUAGE_NONE][0]['value'] = $position;
 
 
-    //FETCH THE POSITION FIELD AS IT WILL BE USED IN THE REQUEST TITLE
-    $positions_field = field_info_field('field_crew_positions');   
-    $allowed_values = list_allowed_values($positions_field);
-     
+    //WE WILL LOOP THROUGH ALL THE FUNCTION THAT DEFINE OUR HOOK
+    $hook_name = "crew_request_presave";
+    foreach (module_implements($hook_name) as $module) {
+      $function = $module . '_' . $hook_name;
+      $function($node, $project, $position);
+    } 
+
+    $position = cm_crew_connect_get_position_label($node);
+
     //SET THE CREW CONNECT REQUEST TITLE WITH THE PROJECT AND POSITION
-    $node->title = $project->title . ": " . $allowed_values[$position];
-
-    ///////////////////////////////////////////////////////////////////////
-    //STUDIO
-
-    //GET CURRENT WHICH STUDIO 
-    $studio = 
-      cm_crew_connect_get_single_field_value($node,
-                                             'field_which_studio_is_this_in',
-                                             'value');
-
-    //CHECK FOR TMP STUDIO FIELDS
-    $field_name = 'field_tmp'.$index.'_which_studio';
-
-    $new_studio = 
-      cm_crew_connect_get_single_field_value($node,$field_name,'value');
-
-    $studio = $new_studio ? $new_studio : $studio;
+    $node->title = $project->title . ": " . $position['label'];
     
-    $node->field_which_studio_is_this_in_[LANGUAGE_NONE][0]['value'] = $studio;
-   
     //SEE IF WE HAVE A CIVI EVENT
     $event_id = 
       cm_crew_connect_get_single_field_value($node,
 					     'field_crew_civievent_id');
-
     
     if ($event_id) {
-      //FIXME, WE SHOULD DECIDE IF WE WANT TO LOOK UP EVENT TO CONFIRM THAT
-      //IT REALLY EXISTS
+      //FIXME, LOOK UP $event_id TO SEE IF IT REALLY EXISTS
     }
     //IF WE DON'T HAVE AN EVENT ID, CREATE ONE
     else {
@@ -134,50 +62,64 @@ function cm_crew_connect_node_presave($node) {
       $minute_length = ($parts[1] == 0) ?  0 : 30*60;
       
       $end = date('Y-m-d H:i:s', $start_ts + $hour_length + $minute_length);
-   //   dsm("before event created");
-      $result2 = civicrm_api3('Event', 'create', 
-			      array(
-				    'sequential' => 1,
-				    'title' => $node->title,
-				    'event_full_text' => "",
-				    'custom_11' => "1",
-				    "start_date" => $start,
-				    "end_date" => $end,
-				    "is_active" => "1",
-				    //  "loc_block_id" => "4",
-				    "default_role_id" => "2",
-				    "description" => $event_desc,
-		 				    "event_type_id" => "170",
-				     'template_id' => $event_template_id,
-				    'is_public' => "1",
-				    ));
+
+      $event_type_id = variable_get('cm_crew_connect_event_type_id');
+      $template_id = variable_get('cm_crew_connect_event_template_id');
+
+      $params = array(
+		      'sequential' => 1,
+		      'title' => $node->title,
+		      'event_full_text' => "",
+		      'custom_11' => "1",
+		      "start_date" => $start,
+		      "end_date" => $end,
+		      "is_active" => "1",
+		      "default_role_id" => "2",
+		      "description" => $event_desc,
+		      "event_type_id" => $event_type_id,
+		      'template_id' => $template_id,
+		      'is_public' => "1",
+		      );
+
+      //WE WILL LOOP THROUGH ALL THE FUNCTION THAT DEFINE OUR HOOK
+      $hook_name = "event_creation_args";
+      foreach (module_implements($hook_name) as $module) {
+	$function = $module . '_' . $hook_name;
+	$function($params, $node);
+      } 
+
+      $result2 = civicrm_api3('Event', 'create', $params);
       $event_id = $result2['id'];
-//dsm("event created");
+
       //set the event to be volunteer enabled.   
       $result3 = civicrm_api3('VolunteerProject', 'create', 
 			      array(
 				    'sequential' => 1,
-				  //  'entity_table' => "civicrm_event",
 				    'id' => $result2['id'],
                                      'title' => $node->title,
                                      ));
 				    
-           $author_cid = CRM_Core_BAO_UFMatch::getContactID($node->uid);
+      $author_cid = CRM_Core_BAO_UFMatch::getContactID($node->uid);
       //set the creator to be a participant 
-      	  $result_add_creator_as_participant = civicrm_api3('Participant', 'create', 
-				  array(
-					'sequential' => 1,
-					'event_id' => $result2['id'],
-					'contact_id' => $author_cid,
-					"role_id" => 3,
-					));
-
+      $result_add_creator_as_participant =
+	civicrm_api3('Participant', 'create', array(
+						    'sequential' => 1,
+						    'event_id'=>$result2['id'],
+						    'contact_id'=> $author_cid,
+						    "role_id" => 3,
+						    ));
+      
       
       
       $id_to_set = (int) $event_id;
     
       $node->field_crew_civievent_id[LANGUAGE_NONE][0]['value']= $id_to_set;
+
     }
+    $node->field_civicrm_event_link[LANGUAGE_NONE][0]['value'] =
+      implode(' -- ', cm_crew_connect_event_links($node));
+    $node->field_civicrm_event_link[LANGUAGE_NONE][0]['format'] =
+      'filtered_html';
   }
   //handle presave logic for the crew connect application
   else if ($node->type == 'crew_connect_application') {
@@ -194,10 +136,13 @@ function cm_crew_connect_node_presave($node) {
     //WE DON'T HAVE A PARTICPANT ID, THEREFORE WE CREATE THE PARTICIPANT RECORD
     else {
       //GET TEH CREW C0NNECT REQUEST NID OFF OF THE APPLICATION
-      $request_nid = 
-	cm_crew_connect_get_single_field_value($node,
-					       'field_app_crew_connect_node',
-					       'target_id');
+      $request_nid = $node->request_nid;
+      $applicant_uid = $node->applicant_uid;
+    
+      $node->field_app_crew_connect_node[LANGUAGE_NONE][0]['target_id']=
+	$request_nid;
+      $node->field_app_producer[LANGUAGE_NONE][0]['target_id'] =
+	$applicant_uid;
 
       $request_node = $request_nid ? node_load($request_nid) : NULL;
 

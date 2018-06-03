@@ -9,7 +9,28 @@
  */
 function cm_crew_connect_node_postsave(&$node) {
   if ($node->type == 'crew_connect_request') {
+    //get project id
+    $project_nid = 
+      cm_crew_connect_get_single_field_value($node,
+					     'field_crew_project_id',
+					     'target_id');
+    
+    //FETCH PROJECT AS IT WILL BE USED IN THE REQUEST TITLE
+    $project = $project_nid ? node_load($project_nid) : NULL;
+    
+    $preset_project = variable_get('cc_project_preset', TRUE); 
+    if ($preset_project && $project) {
+      $field_name = 'field_crew_public_description';
+      $description = cm_crew_connect_get_single_field_value($node,
+							    $field_name);
+      if ($description) {
 
+	$field_name = variable_get('cc_project_description_field', '');
+	$field = &$project->{$field_name}; 
+	$field[LANGUAGE_NONE][0]['value'] = $description;
+	field_attach_update('node', $project);
+      }	
+    }
   }
   else if ($node->type == 'crew_connect_application') {
     //setting session variable so we have it to override status message later
@@ -20,10 +41,13 @@ function cm_crew_connect_node_postsave(&$node) {
 					     'field_app_crew_connect_node',
 					     'target_id');
  
-
+    //resave Crew Connect Request node so computed field can be set
     $request = node_load($request_nid);
     if ($request) {
-      node_save($request);
+      $links = cm_crew_connect_event_links($request);
+      $request->field_civicrm_event_link[LANGUAGE_NONE][0]['value'] =
+	implode(' -- ', $links);
+      field_attach_update('node', $request);
     }
 
   }

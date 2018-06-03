@@ -1,0 +1,2981 @@
+$data = array(
+  'bundles' => array(
+    'crew_connect_application' => (object) array(
+      'type' => 'crew_connect_application',
+      'name' => 'Crew Connect Application',
+      'base' => 'node_content',
+      'module' => 'node',
+      'description' => '',
+      'help' => '',
+      'has_title' => '1',
+      'title_label' => 'Title',
+      'custom' => '1',
+      'modified' => '1',
+      'locked' => '0',
+      'disabled' => '0',
+      'orig_type' => 'crew_connect_application',
+      'disabled_changed' => FALSE,
+      'bc_entity_type' => 'node',
+    ),
+    'crew_connect_request' => (object) array(
+      'type' => 'crew_connect_request',
+      'name' => 'Crew Connect Request',
+      'base' => 'node_content',
+      'module' => 'node',
+      'description' => 'This content type creates a node with event date/time in Drupal that in mirrored by a CiviCRM Volunteer Event.',
+      'help' => '',
+      'has_title' => '1',
+      'title_label' => 'Title',
+      'custom' => '1',
+      'modified' => '1',
+      'locked' => '0',
+      'disabled' => '0',
+      'orig_type' => 'crew_connect_request',
+      'disabled_changed' => FALSE,
+      'bc_entity_type' => 'node',
+    ),
+  ),
+  'fields' => array(
+    'body' => array(
+      'entity_types' => array(
+        0 => 'node',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'settings' => array(
+        'profile2_private' => FALSE,
+        'field_permissions' => array(
+          'create' => 0,
+          'edit' => 0,
+          'edit own' => 0,
+          'view' => 0,
+          'view own' => 0,
+        ),
+      ),
+      'translatable' => '0',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_body' => array(
+                'value' => 'body_value',
+                'summary' => 'body_summary',
+                'format' => 'body_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_body' => array(
+                'value' => 'body_value',
+                'summary' => 'body_summary',
+                'format' => 'body_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'global_block_settings' => '1',
+      'field_name' => 'body',
+      'type' => 'text_with_summary',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ),
+        'summary' => array(
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'page',
+          1 => 'article',
+          2 => 'header_image',
+          3 => 'flickr_image',
+          4 => 'news',
+          5 => 'event',
+          6 => 'merci_ac_adapter',
+          7 => 'om_show',
+          8 => 'services',
+          9 => 'program_spotlight',
+          10 => 'event_feed',
+          11 => 'time_sheet',
+          12 => 'webform',
+          13 => 'events',
+          14 => 'studio',
+          15 => 'tripod',
+          16 => 'camera_hd',
+          17 => 'wireless_lavalier',
+          18 => 'power_strips',
+          19 => 'community_room',
+          20 => 'commons',
+          21 => 'express_studio',
+          22 => 'camera_battery_charger',
+          23 => 'camera_power_adapter',
+          24 => 'microphone',
+          25 => 'camera_battery_',
+          26 => 'audio_recorder',
+          27 => 'sony_mdr_7502',
+          28 => 'light_kit',
+          29 => 'xlr_mini',
+          30 => 'cm_project',
+          31 => 'news_slideshow',
+          32 => 'sound_room',
+          33 => 'green_room',
+          34 => 'kitchen',
+          35 => 'edit_suite_1',
+          36 => 'forum',
+          37 => 'control_room',
+          38 => 'sony_nxcam_staff',
+          39 => 'tricaster_mobile_studio',
+          40 => 'sony_nxcam',
+          41 => 'media_lab2',
+          42 => 'studio_lavalier_microphones',
+          43 => 'rode_mic',
+          44 => 'sony_nxcam_battery',
+          45 => 'sony_adapter_charger',
+          46 => 'sennheiser_handheld_micphone_kit',
+          47 => 'civicrm_multiday_event',
+          48 => 'xlr_xlr',
+          49 => 'studio_package',
+          50 => 'clear_com_headset_receiver',
+          51 => 'sony_hd_dcmex',
+          52 => 'shure_sm571',
+          53 => 'community_news',
+          54 => 'meet_candidates',
+          55 => 'rifa_only_light_kit',
+          56 => 'green_screen',
+          57 => 'tota_omni_kit',
+          58 => 'tota_pro_light_kit',
+          59 => 'omni_pro_light_kit',
+          60 => 'microphone_stand',
+          61 => 'projector',
+          62 => 'dongle',
+          63 => 'pc_computer',
+          64 => 'mac_computer',
+          65 => 'director_s_chair',
+          66 => 'book',
+          67 => 'pa_system',
+          68 => 'mackie_402_vlz4',
+          69 => 'gallery',
+          70 => 'camera_shoulder_mount',
+          71 => 'boundary_microphone',
+          72 => 'vixia_shotgun_mic',
+          73 => 'express_studio_package',
+          74 => 'tech_lounge',
+          75 => 'led_light_kit',
+          76 => 'instructor',
+          77 => 'vinten_tripod_staff',
+          78 => 'document',
+          79 => 'blog',
+          80 => 'express_studio_lav',
+          81 => 'digital_audio_recorder',
+          82 => 'express_studio_wireless_lav',
+          83 => 'headphone_splitter',
+          84 => 'tech_lounge_studio',
+          85 => 'sony_mdr_7506_v6',
+          86 => 'xlrm_xlrf',
+          87 => 'radio',
+          88 => 'sony_mdr_v6',
+          89 => 'bio',
+          90 => 'tricaster_mini_hd4sdi',
+          91 => 'shure_pg58_',
+          92 => 'shure_sm58',
+          93 => 'sony_xdcam',
+          94 => 'community_room_2',
+          95 => 'sony_xdcam_battery',
+          96 => 'radio_show_list',
+          97 => 'main_studio_floor_lights',
+          98 => 'sony_xdcam_charger',
+          99 => 'sony_xdcam_headphones',
+          100 => 'xdcam_argo_camera_bag',
+          101 => 'admin_work_center',
+          102 => 'member_of_the_month',
+          103 => 'green_screen_studio',
+          104 => 'led_on_camera_light',
+          105 => 'rode_boom_ntg_1_phantom_power_on',
+          106 => 'wireless_lavalier_studio_use_onl',
+          107 => 'job_posting',
+          108 => 'shure_wired_sm57a_microphone',
+          109 => 'shure_wired_sm58a_microphone',
+          110 => 'bucket_template',
+          111 => 'resource_template',
+          112 => 'sony_fs7_kit_includes_2_batterie',
+          113 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_app_apps_public_email' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_app_apps_public_email' => array(
+                'value' => 'field_app_apps_public_email_value',
+                'format' => 'field_app_apps_public_email_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_app_apps_public_email' => array(
+                'value' => 'field_app_apps_public_email_value',
+                'format' => 'field_app_apps_public_email_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_app_apps_public_email',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_application',
+        ),
+      ),
+    ),
+    'field_app_crew_connect_node' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'target_type' => 'node',
+        'handler' => 'base',
+        'handler_settings' => array(
+          'target_bundles' => array(
+            'crew_connect_request' => 'crew_connect_request',
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+        ),
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_app_crew_connect_node' => array(
+                'target_id' => 'field_app_crew_connect_node_target_id',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_app_crew_connect_node' => array(
+                'target_id' => 'field_app_crew_connect_node_target_id',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'node' => array(
+          'table' => 'node',
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_app_crew_connect_node',
+      'type' => 'entityreference',
+      'module' => 'entityreference',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'target_id' => array(
+          'description' => 'The id of the target entity.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_application',
+        ),
+      ),
+    ),
+    'field_app_participant_id' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_app_participant_id' => array(
+                'value' => 'field_app_participant_id_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_app_participant_id' => array(
+                'value' => 'field_app_participant_id_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'field_name' => 'field_app_participant_id',
+      'type' => 'number_integer',
+      'module' => 'number',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'int',
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_application',
+        ),
+      ),
+    ),
+    'field_app_producer' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'target_type' => 'user',
+        'handler' => 'base',
+        'handler_settings' => array(
+          'target_bundles' => array(),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+        ),
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_app_producer' => array(
+                'target_id' => 'field_app_producer_target_id',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_app_producer' => array(
+                'target_id' => 'field_app_producer_target_id',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'users' => array(
+          'table' => 'users',
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_app_producer',
+      'type' => 'entityreference',
+      'module' => 'entityreference',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'target_id' => array(
+          'description' => 'The id of the target entity.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_application',
+        ),
+      ),
+    ),
+    'field_app_share_email' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          'no' => 'No',
+          'yes' => 'Yes',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_app_share_email' => array(
+                'value' => 'field_app_share_email_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_app_share_email' => array(
+                'value' => 'field_app_share_email_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_app_share_email',
+      'type' => 'list_text',
+      'module' => 'list',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_application',
+        ),
+      ),
+    ),
+    'field_app_status' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          'pending' => 'Pending',
+          'confirmed' => 'Confirmed',
+          'cancelled' => 'Cancelled',
+          'noshow' => 'Did Not Show Up',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_app_status' => array(
+                'value' => 'field_app_status_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_app_status' => array(
+                'value' => 'field_app_status_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'field_name' => 'field_app_status',
+      'type' => 'list_text',
+      'module' => 'list',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_application',
+        ),
+      ),
+    ),
+    'field_civicrm_event_link' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_civicrm_event_link' => array(
+                'value' => 'field_civicrm_event_link_value',
+                'format' => 'field_civicrm_event_link_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_civicrm_event_link' => array(
+                'value' => 'field_civicrm_event_link_value',
+                'format' => 'field_civicrm_event_link_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'field_name' => 'field_civicrm_event_link',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_civievent_id' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_civievent_id' => array(
+                'value' => 'field_crew_civievent_id_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_civievent_id' => array(
+                'value' => 'field_crew_civievent_id_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'field_name' => 'field_crew_civievent_id',
+      'type' => 'number_integer',
+      'module' => 'number',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'int',
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_content_ratings' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          'adult_themes' => 'Adult Themes',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_content_ratings' => array(
+                'value' => 'field_crew_content_ratings_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_content_ratings' => array(
+                'value' => 'field_crew_content_ratings_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_content_ratings',
+      'type' => 'list_text',
+      'module' => 'list',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_language' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_language' => array(
+                'value' => 'field_crew_language_value',
+                'format' => 'field_crew_language_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_language' => array(
+                'value' => 'field_crew_language_value',
+                'format' => 'field_crew_language_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_language',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_length_of_time' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          ':5' => '1/2',
+          '1:0' => '1',
+          '1:5' => '1 1/2',
+          '2:0' => '2',
+          '2:5' => '2 1/2',
+          '3:0' => '3',
+          '3:5' => '3 1/2',
+          '4:0' => '4',
+          '4:5' => '4 1/2',
+          '5:0' => '5',
+          '5:5' => '5 1/2',
+          '6:0' => '6',
+          '6:5' => '6 1/2',
+          '7:0' => '7',
+          '7:5' => '7 1/2',
+          '8:0' => '8',
+          '8:5' => '8 1/2',
+          '9:0' => '9',
+          '9:5' => '9 1/2',
+          '10:0' => '10',
+          '10:5' => '10 1/2',
+          '11:0' => '11',
+          '11:5' => '11 1/2',
+          '12:0' => '12',
+          '12:5' => '12 1/2',
+          '13:0' => '13',
+          '13:5' => '13 1/2',
+          '14:0' => '14',
+          '14:5' => '14 1/2',
+          '15:0' => '15',
+          '15:5' => '15 1/2',
+          '16:0' => '16',
+          '16:5' => '16 1/2',
+          '17:0' => '17',
+          '17:5' => '17 1/2',
+          '18:0' => '18',
+          '18:5' => '18 1/2',
+          '19:0' => '19',
+          '19:5' => '19 1/2',
+          '20:0' => '20',
+          '20:5' => '20 1/2',
+          '21:0' => '21',
+          '21:5' => '21 1/2',
+          '22:0' => '22',
+          '22:5' => '22 1/2',
+          '23:0' => '23',
+          '23:5' => '23 1/2',
+          '24:0' => '24',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_length_of_time' => array(
+                'value' => 'field_crew_length_of_time_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_length_of_time' => array(
+                'value' => 'field_crew_length_of_time_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_length_of_time',
+      'type' => 'list_text',
+      'module' => 'list',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_opportunity_type' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'crew_connect_opportunity_type',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_opportunity_type' => array(
+                'tid' => 'field_crew_opportunity_type_tid',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_opportunity_type' => array(
+                'tid' => 'field_crew_opportunity_type_tid',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'table' => 'taxonomy_term_data',
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_opportunity_type',
+      'type' => 'taxonomy_term_reference',
+      'module' => 'taxonomy',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'tid' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_position_taxonomy' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'crew_connect_position',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_position_taxonomy' => array(
+                'tid' => 'field_crew_position_taxonomy_tid',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_position_taxonomy' => array(
+                'tid' => 'field_crew_position_taxonomy_tid',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'table' => 'taxonomy_term_data',
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_position_taxonomy',
+      'type' => 'taxonomy_term_reference',
+      'module' => 'taxonomy',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'tid' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_producer_name' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_producer_name' => array(
+                'value' => 'field_crew_producer_name_value',
+                'format' => 'field_crew_producer_name_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_producer_name' => array(
+                'value' => 'field_crew_producer_name_value',
+                'format' => 'field_crew_producer_name_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_producer_name',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_project_id' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'target_type' => 'node',
+        'handler' => 'base',
+        'handler_settings' => array(
+          'target_bundles' => array(
+            'cm_project' => 'cm_project',
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+        ),
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_project_id' => array(
+                'target_id' => 'field_crew_project_id_target_id',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_project_id' => array(
+                'target_id' => 'field_crew_project_id_target_id',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'node' => array(
+          'table' => 'node',
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_project_id',
+      'type' => 'entityreference',
+      'module' => 'entityreference',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'target_id' => array(
+          'description' => 'The id of the target entity.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_public_description' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_public_description' => array(
+                'value' => 'field_crew_public_description_value',
+                'format' => 'field_crew_public_description_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_public_description' => array(
+                'value' => 'field_crew_public_description_value',
+                'format' => 'field_crew_public_description_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_public_description',
+      'type' => 'text_long',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_public_url' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_public_url' => array(
+                'value' => 'field_crew_public_url_value',
+                'format' => 'field_crew_public_url_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_public_url' => array(
+                'value' => 'field_crew_public_url_value',
+                'format' => 'field_crew_public_url_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_public_url',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_requesters_pub_email' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_requesters_pub_email' => array(
+                'value' => 'field_crew_requesters_pub_email_value',
+                'format' => 'field_crew_requesters_pub_email_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_requesters_pub_email' => array(
+                'value' => 'field_crew_requesters_pub_email_value',
+                'format' => 'field_crew_requesters_pub_email_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_requesters_pub_email',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_share_email' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          'no' => 'No',
+          'yes' => 'Yes',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_share_email' => array(
+                'value' => 'field_crew_share_email_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_share_email' => array(
+                'value' => 'field_crew_share_email_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_share_email',
+      'type' => 'list_text',
+      'module' => 'list',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_start_date' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'granularity' => array(
+          'month' => 'month',
+          'day' => 'day',
+          'year' => 'year',
+          'hour' => 0,
+          'minute' => 0,
+          'second' => 0,
+        ),
+        'tz_handling' => 'none',
+        'timezone_db' => '',
+        'cache_enabled' => 0,
+        'cache_count' => '4',
+        'repeat' => '0',
+        'todate' => '',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_start_date' => array(
+                'value' => 'field_crew_start_date_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_start_date' => array(
+                'value' => 'field_crew_start_date_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_start_date',
+      'type' => 'datetime',
+      'module' => 'date',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'datetime',
+          'mysql_type' => 'datetime',
+          'pgsql_type' => 'timestamp without time zone',
+          'sqlite_type' => 'varchar',
+          'sqlsrv_type' => 'smalldatetime',
+          'not null' => FALSE,
+          'sortable' => TRUE,
+          'views' => TRUE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_start_time' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          '10:00' => '10:00 AM',
+          '10:15' => '10:15 AM',
+          '10:30' => '10:30 AM',
+          '10:45' => '10:45 AM',
+          '11:00' => '11:00 AM',
+          '11:15' => '11:15 AM',
+          '11:30' => '11:30 AM',
+          '11:45' => '11:45 AM',
+          '12:00' => '12:00 PM',
+          '12:15' => '12:15 PM',
+          '12:30' => '12:30 PM',
+          '12:45' => '12:45 PM',
+          '13:00' => ' 1:00 PM',
+          '13:15' => ' 1:15 PM',
+          '13:30' => ' 1:30 PM',
+          '13:45' => ' 1:45 PM',
+          '14:00' => ' 2:00 PM',
+          '14:15' => ' 2:15 PM',
+          '14:30' => ' 2:30 PM',
+          '14:45' => ' 2:45 PM',
+          '15:00' => ' 3:00 PM',
+          '15:15' => ' 3:15 PM',
+          '15:30' => ' 3:30 PM',
+          '15:45' => ' 3:45 PM',
+          '16:00' => ' 4:00 PM',
+          '16:15' => ' 4:15 PM',
+          '16:30' => ' 4:30 PM',
+          '16:45' => ' 4:45 PM',
+          '17:00' => ' 5:00 PM',
+          '17:15' => ' 5:15 PM',
+          '17:30' => ' 5:30 PM',
+          '17:45' => ' 5:45 PM',
+          '18:00' => ' 6:00 PM',
+          '18:15' => ' 6:15 PM',
+          '18:30' => ' 6:30 PM',
+          '18:45' => ' 6:45 PM',
+          '19:00' => ' 7:00 PM',
+          '19:15' => ' 7:15 PM',
+          '19:30' => ' 7:30 PM',
+          '19:45' => ' 7:45 PM',
+          '20:00' => ' 8:00 PM',
+          '20:15' => ' 8:15 PM',
+          '20:30' => ' 8:30 PM',
+          '20:45' => ' 8:45 PM',
+          '21:00' => ' 9:00 PM',
+          '21:15' => ' 9:15 PM',
+          '21:30' => ' 9:30 PM',
+          '21:45' => ' 9:45 PM',
+          '22:00' => '10:00 PM',
+          '22:15' => '10:15 PM',
+          '22:30' => '10:30 PM',
+          '22:45' => '10:45 PM',
+          '23:00' => '11:00 PM',
+          '23:15' => '11:15 PM',
+          '23:30' => '11:30 PM',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_start_time' => array(
+                'value' => 'field_crew_start_time_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_start_time' => array(
+                'value' => 'field_crew_start_time_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'field_name' => 'field_crew_start_time',
+      'type' => 'list_text',
+      'module' => 'list',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+    'field_crew_status' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'allowed_values' => array(
+          'open' => 'Open',
+          'confirmed' => 'Confirmed',
+          'cancelled' => 'Cancelled',
+        ),
+        'allowed_values_function' => '',
+        'profile2_private' => FALSE,
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_crew_status' => array(
+                'value' => 'field_crew_status_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_crew_status' => array(
+                'value' => 'field_crew_status_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'field_name' => 'field_crew_status',
+      'type' => 'list_text',
+      'module' => 'list',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'crew_connect_request',
+        ),
+      ),
+    ),
+  ),
+  'instances' => array(
+    'body' => array(
+      0 => array(
+        'label' => 'Crew Request Description',
+        'widget' => array(
+          'weight' => '28',
+          'type' => 'text_textarea_with_summary',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'rows' => '7',
+            'summary_rows' => 5,
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'display_summary' => 0,
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'above',
+            'type' => 'text_plain',
+            'weight' => '29',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'label' => 'hidden',
+            'type' => 'text_summary_or_trimmed',
+            'settings' => array(
+              'trim_length' => 600,
+            ),
+            'module' => 'text',
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => 'Please include information that is specific to your request and the show, such as: I want someone that knows how to...; or you might say who is going to be the guest on this show and what are they going to be discussing or doing.',
+        'default_value' => NULL,
+        'field_name' => 'body',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_app_apps_public_email' => array(
+      0 => array(
+        'label' => 'Public Email',
+        'widget' => array(
+          'weight' => '2',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'text_default',
+            'weight' => '3',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_app_apps_public_email',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_application',
+        'deleted' => '0',
+      ),
+    ),
+    'field_app_crew_connect_node' => array(
+      0 => array(
+        'label' => 'Crew Connect Node',
+        'widget' => array(
+          'weight' => '-3',
+          'type' => 'entityreference_autocomplete',
+          'module' => 'entityreference',
+          'active' => 1,
+          'settings' => array(
+            'match_operator' => 'CONTAINS',
+            'size' => '60',
+            'path' => '',
+          ),
+        ),
+        'settings' => array(
+          'behaviors' => array(
+            'prepopulate' => array(
+              'status' => 0,
+            ),
+          ),
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'entityreference_label',
+            'weight' => '0',
+            'settings' => array(
+              'bypass_access' => 0,
+              'link' => 1,
+            ),
+            'module' => 'entityreference',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'default_value_function' => '',
+        'field_name' => 'field_app_crew_connect_node',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_application',
+        'deleted' => '0',
+      ),
+    ),
+    'field_app_participant_id' => array(
+      0 => array(
+        'label' => 'Participant ID',
+        'widget' => array(
+          'weight' => '-1',
+          'type' => 'number',
+          'module' => 'number',
+          'active' => 0,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'min' => '',
+          'max' => '',
+          'prefix' => '',
+          'suffix' => '',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'number_integer',
+            'weight' => '5',
+            'settings' => array(
+              'thousand_separator' => '',
+              'prefix_suffix' => 1,
+              'decimal_separator' => '.',
+              'scale' => 0,
+            ),
+            'module' => 'number',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_app_participant_id',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_application',
+        'deleted' => '0',
+      ),
+    ),
+    'field_app_producer' => array(
+      0 => array(
+        'label' => 'Producer',
+        'widget' => array(
+          'weight' => '-2',
+          'type' => 'entityreference_autocomplete',
+          'module' => 'entityreference',
+          'active' => 1,
+          'settings' => array(
+            'match_operator' => 'CONTAINS',
+            'size' => '60',
+            'path' => '',
+          ),
+        ),
+        'settings' => array(
+          'behaviors' => array(
+            'prepopulate' => array(
+              'status' => 0,
+            ),
+          ),
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'entityreference_label',
+            'weight' => '1',
+            'settings' => array(
+              'bypass_access' => 0,
+              'link' => 1,
+            ),
+            'module' => 'entityreference',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'default_value_function' => '',
+        'field_name' => 'field_app_producer',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_application',
+        'deleted' => '0',
+      ),
+    ),
+    'field_app_share_email' => array(
+      0 => array(
+        'label' => 'Would you like to share your email address with the other producer(s) for whom you will be crewing?',
+        'widget' => array(
+          'weight' => '1',
+          'type' => 'options_select',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'list_default',
+            'weight' => '2',
+            'settings' => array(),
+            'module' => 'list',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => 'Please indicate whether you want to share your public email address with other producers',
+        'default_value' => array(
+          0 => array(
+            'value' => 'yes',
+          ),
+        ),
+        'field_name' => 'field_app_share_email',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_application',
+        'deleted' => '0',
+      ),
+    ),
+    'field_app_status' => array(
+      0 => array(
+        'label' => 'Status',
+        'widget' => array(
+          'weight' => '0',
+          'type' => 'options_select',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'list_default',
+            'weight' => '4',
+            'settings' => array(),
+            'module' => 'list',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => array(
+          0 => array(
+            'value' => 'confirmed',
+          ),
+        ),
+        'field_name' => 'field_app_status',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_application',
+        'deleted' => '0',
+      ),
+    ),
+    'field_civicrm_event_link' => array(
+      0 => array(
+        'label' => 'CiviCRM Event Link',
+        'widget' => array(
+          'weight' => '39',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '1',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'text_default',
+            'weight' => '22',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_civicrm_event_link',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_civievent_id' => array(
+      0 => array(
+        'label' => 'Event ID',
+        'widget' => array(
+          'weight' => '38',
+          'type' => 'number',
+          'module' => 'number',
+          'active' => 0,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'min' => '',
+          'max' => '',
+          'prefix' => '',
+          'suffix' => '',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'number_integer',
+            'weight' => '10',
+            'settings' => array(
+              'thousand_separator' => '',
+              'prefix_suffix' => 1,
+              'decimal_separator' => '.',
+              'scale' => 0,
+            ),
+            'module' => 'number',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_civievent_id',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_content_ratings' => array(
+      0 => array(
+        'label' => 'This particular episode will feature',
+        'widget' => array(
+          'weight' => '29',
+          'type' => 'options_buttons',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'hidden',
+            'type' => 'list_default',
+            'weight' => '25',
+            'settings' => array(),
+            'module' => 'list',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_content_ratings',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_language' => array(
+      0 => array(
+        'label' => 'Language',
+        'widget' => array(
+          'weight' => '22',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'text_default',
+            'weight' => '10',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_language',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_length_of_time' => array(
+      0 => array(
+        'label' => 'Length of Time In Hours',
+        'widget' => array(
+          'weight' => '32',
+          'type' => 'options_select',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'list_default',
+            'weight' => '28',
+            'settings' => array(),
+            'module' => 'list',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => '',
+        'default_value' => array(
+          0 => array(
+            'value' => '2:0',
+          ),
+        ),
+        'field_name' => 'field_crew_length_of_time',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_opportunity_type' => array(
+      0 => array(
+        'label' => 'Volunteer Opportunity Type',
+        'widget' => array(
+          'weight' => '26',
+          'type' => 'options_select',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'taxonomy_term_reference_plain',
+            'weight' => '23',
+            'settings' => array(),
+            'module' => 'taxonomy',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_opportunity_type',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_position_taxonomy' => array(
+      0 => array(
+        'label' => 'Crew Position',
+        'widget' => array(
+          'weight' => '27',
+          'type' => 'options_select',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'taxonomy_term_reference_plain',
+            'weight' => '24',
+            'settings' => array(),
+            'module' => 'taxonomy',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_position_taxonomy',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_producer_name' => array(
+      0 => array(
+        'label' => 'Producer\'s Name',
+        'widget' => array(
+          'weight' => '18',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'text_default',
+            'weight' => '8',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_producer_name',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_project_id' => array(
+      0 => array(
+        'label' => 'Project',
+        'widget' => array(
+          'weight' => '19',
+          'type' => 'entityreference_autocomplete',
+          'module' => 'entityreference',
+          'active' => 1,
+          'settings' => array(
+            'match_operator' => 'CONTAINS',
+            'size' => '60',
+            'path' => '',
+          ),
+        ),
+        'settings' => array(
+          'behaviors' => array(
+            'prepopulate' => array(
+              'status' => 0,
+            ),
+          ),
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'entityreference_label',
+            'weight' => '7',
+            'settings' => array(
+              'link' => FALSE,
+              'bypass_access' => FALSE,
+            ),
+            'module' => 'entityreference',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'default_value_function' => '',
+        'field_name' => 'field_crew_project_id',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_public_description' => array(
+      0 => array(
+        'label' => 'Project Description',
+        'widget' => array(
+          'weight' => '20',
+          'type' => 'text_textarea',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'rows' => '5',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'above',
+            'type' => 'text_default',
+            'weight' => '11',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_public_description',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_public_url' => array(
+      0 => array(
+        'label' => 'Project Website',
+        'widget' => array(
+          'weight' => '21',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'text_default',
+            'weight' => '9',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_public_url',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_requesters_pub_email' => array(
+      0 => array(
+        'label' => 'Public Email',
+        'widget' => array(
+          'weight' => '19',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'text_default',
+            'weight' => '5',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_requesters_pub_email',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_share_email' => array(
+      0 => array(
+        'label' => 'Would you like to share your email address with the producers who will be crewing for you?',
+        'widget' => array(
+          'weight' => '18',
+          'type' => 'options_select',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'list_default',
+            'weight' => '4',
+            'settings' => array(),
+            'module' => 'list',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => 'Indicate if you are willing to share your public email address with those persons who will be crewing for you.',
+        'default_value' => array(
+          0 => array(
+            'value' => 'yes',
+          ),
+        ),
+        'field_name' => 'field_crew_share_email',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_start_date' => array(
+      0 => array(
+        'label' => 'Start Date',
+        'widget' => array(
+          'weight' => '30',
+          'type' => 'date_popup',
+          'module' => 'date',
+          'active' => 1,
+          'settings' => array(
+            'input_format' => 'm/d/Y - g:i:sa',
+            'input_format_custom' => '',
+            'year_range' => '-3:+3',
+            'increment' => '15',
+            'label_position' => 'above',
+            'text_parts' => array(),
+            'display_all_day' => 0,
+            'repeat_collapsed' => 0,
+          ),
+        ),
+        'settings' => array(
+          'default_value' => 'blank',
+          'default_value_code' => '',
+          'default_value2' => 'same',
+          'default_value_code2' => '',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'date_default',
+            'weight' => '26',
+            'settings' => array(
+              'format_type' => 'long',
+              'multiple_number' => '',
+              'multiple_from' => '',
+              'multiple_to' => '',
+              'fromto' => 'both',
+              'show_repeat_rule' => 'show',
+              'show_remaining_days' => FALSE,
+            ),
+            'module' => 'date',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => '',
+        'field_name' => 'field_crew_start_date',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_start_time' => array(
+      0 => array(
+        'label' => 'Start Time',
+        'widget' => array(
+          'weight' => '31',
+          'type' => 'options_select',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'list_default',
+            'weight' => '27',
+            'settings' => array(),
+            'module' => 'list',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => 'Please make sure the Facility you are using is open on this day and at this time.',
+        'default_value' => NULL,
+        'field_name' => 'field_crew_start_time',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+    'field_crew_status' => array(
+      0 => array(
+        'label' => 'Status',
+        'widget' => array(
+          'weight' => '40',
+          'type' => 'options_buttons',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'list_default',
+            'weight' => '12',
+            'settings' => array(),
+            'module' => 'list',
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => array(
+          0 => array(
+            'value' => 'open',
+          ),
+        ),
+        'field_name' => 'field_crew_status',
+        'entity_type' => 'node',
+        'bundle' => 'crew_connect_request',
+        'deleted' => '0',
+      ),
+    ),
+  ),
+  'fieldgroups' => array(
+    'group_crew_project_info|node|crew_connect_request|form' => (object) array(
+      'id' => '31',
+      'identifier' => 'group_crew_project_info|node|crew_connect_request|form',
+      'group_name' => 'group_crew_project_info',
+      'entity_type' => 'node',
+      'bundle' => 'crew_connect_request',
+      'mode' => 'form',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'label' => 'Project Information',
+      'weight' => '0',
+      'children' => array(
+        0 => 'field_crew_language',
+        1 => 'field_crew_producer_name',
+        2 => 'field_crew_project_id',
+        3 => 'field_crew_public_description',
+        4 => 'field_crew_public_url',
+      ),
+      'format_type' => 'fieldset',
+      'format_settings' => array(
+        'label' => 'Project Information',
+        'instance_settings' => array(
+          'required_fields' => 1,
+          'id' => '',
+          'classes' => 'group-crew-project-info field-group-fieldset',
+          'description' => '',
+        ),
+        'formatter' => 'collapsible',
+      ),
+    ),
+    'group_crew_request_info|node|crew_connect_request|form' => (object) array(
+      'id' => '32',
+      'identifier' => 'group_crew_request_info|node|crew_connect_request|form',
+      'group_name' => 'group_crew_request_info',
+      'entity_type' => 'node',
+      'bundle' => 'crew_connect_request',
+      'mode' => 'form',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'label' => 'Crew Request Information',
+      'weight' => '2',
+      'children' => array(
+        0 => 'body',
+        1 => 'field_crew_content_ratings',
+        2 => 'field_crew_length_of_time',
+        3 => 'field_crew_start_date',
+        4 => 'field_crew_start_time',
+        5 => 'field_crew_position_taxonomy',
+        6 => 'field_crew_opportunity_type',
+        7 => 'title',
+      ),
+      'format_type' => 'fieldset',
+      'format_settings' => array(
+        'formatter' => 'collapsible',
+        'instance_settings' => array(
+          'description' => '',
+          'classes' => 'group-crew-request-info field-group-fieldset',
+          'required_fields' => 1,
+        ),
+      ),
+    ),
+    'group_crew_staff_only|node|crew_connect_request|form' => (object) array(
+      'id' => '33',
+      'identifier' => 'group_crew_staff_only|node|crew_connect_request|form',
+      'group_name' => 'group_crew_staff_only',
+      'entity_type' => 'node',
+      'bundle' => 'crew_connect_request',
+      'mode' => 'form',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'label' => 'Staff Only',
+      'weight' => '3',
+      'children' => array(
+        0 => 'field_crew_civievent_id',
+        1 => 'field_crew_status',
+        2 => 'field_civicrm_event_link',
+      ),
+      'format_type' => 'fieldset',
+      'format_settings' => array(
+        'formatter' => 'collapsible',
+        'instance_settings' => array(
+          'description' => '',
+          'classes' => 'group-crew-staff-only field-group-fieldset',
+          'required_fields' => 1,
+        ),
+      ),
+    ),
+    'group_cew_notifications|node|crew_connect_request|form' => (object) array(
+      'id' => '34',
+      'identifier' => 'group_cew_notifications|node|crew_connect_request|form',
+      'group_name' => 'group_cew_notifications',
+      'entity_type' => 'node',
+      'bundle' => 'crew_connect_request',
+      'mode' => 'form',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'label' => 'Notifications',
+      'weight' => '1',
+      'children' => array(
+        0 => 'field_crew_share_email',
+        1 => 'field_crew_requesters_pub_email',
+      ),
+      'format_type' => 'fieldset',
+      'format_settings' => array(
+        'formatter' => 'collapsible',
+        'instance_settings' => array(
+          'description' => '',
+          'classes' => 'group-cew-notifications field-group-fieldset',
+          'required_fields' => 1,
+        ),
+      ),
+    ),
+    'group_crew_project_info|node|crew_connect_request|default' => (object) array(
+      'id' => '35',
+      'identifier' => 'group_crew_project_info|node|crew_connect_request|default',
+      'group_name' => 'group_crew_project_info',
+      'entity_type' => 'node',
+      'bundle' => 'crew_connect_request',
+      'mode' => 'default',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'label' => 'Project Information',
+      'weight' => '0',
+      'children' => array(
+        0 => 'field_crew_language',
+        1 => 'field_crew_producer_name',
+        2 => 'field_crew_project_id',
+        3 => 'field_crew_public_description',
+        4 => 'field_crew_public_url',
+      ),
+      'format_type' => 'fieldset',
+      'format_settings' => array(
+        'formatter' => 'collapsible',
+        'instance_settings' => array(
+          'description' => '',
+          'classes' => 'group-crew-project-info field-group-fieldset',
+        ),
+      ),
+    ),
+    'group_crew_request_info|node|crew_connect_request|default' => (object) array(
+      'id' => '36',
+      'identifier' => 'group_crew_request_info|node|crew_connect_request|default',
+      'group_name' => 'group_crew_request_info',
+      'entity_type' => 'node',
+      'bundle' => 'crew_connect_request',
+      'mode' => 'default',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'label' => 'Crew Request Information',
+      'weight' => '1',
+      'children' => array(
+        0 => 'body',
+        1 => 'field_crew_content_ratings',
+        2 => 'field_crew_length_of_time',
+        3 => 'field_crew_start_date',
+        4 => 'field_crew_start_time',
+        5 => 'field_crew_position_taxonomy',
+        6 => 'field_crew_opportunity_type',
+      ),
+      'format_type' => 'fieldset',
+      'format_settings' => array(
+        'formatter' => 'collapsible',
+        'instance_settings' => array(
+          'description' => '',
+          'classes' => 'group-crew-request-info field-group-fieldset',
+          'required_fields' => 1,
+        ),
+      ),
+    ),
+    'group_crew_staff_only|node|crew_connect_request|default' => (object) array(
+      'id' => '37',
+      'identifier' => 'group_crew_staff_only|node|crew_connect_request|default',
+      'group_name' => 'group_crew_staff_only',
+      'entity_type' => 'node',
+      'bundle' => 'crew_connect_request',
+      'mode' => 'default',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'label' => 'Staff Only',
+      'weight' => '3',
+      'children' => array(
+        0 => 'field_crew_civievent_id',
+        1 => 'field_crew_status',
+        2 => 'field_civicrm_event_link',
+      ),
+      'format_type' => 'fieldset',
+      'format_settings' => array(
+        'formatter' => 'collapsible',
+        'instance_settings' => array(
+          'description' => '',
+          'classes' => 'group-crew-staff-only field-group-fieldset',
+          'required_fields' => 1,
+        ),
+      ),
+    ),
+    'group_cwe_notifications|node|crew_connect_request|default' => (object) array(
+      'id' => '38',
+      'identifier' => 'group_cwe_notifications|node|crew_connect_request|default',
+      'group_name' => 'group_cwe_notifications',
+      'entity_type' => 'node',
+      'bundle' => 'crew_connect_request',
+      'mode' => 'default',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'label' => 'Notifications',
+      'weight' => '2',
+      'children' => array(
+        0 => 'field_crew_share_email',
+        1 => 'field_crew_requesters_pub_email',
+      ),
+      'format_type' => 'fieldset',
+      'format_settings' => array(
+        'formatter' => 'collapsible',
+        'instance_settings' => array(
+          'description' => '',
+          'classes' => 'group-cwe-notifications field-group-fieldset',
+        ),
+      ),
+    ),
+  ),
+);

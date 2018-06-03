@@ -1,5 +1,12 @@
-name = "CMA Crew Connect"
+name = "CM Crew Connect"
 description = "Provides helper files for managing crew connections. Relies on the Crew Request and Crew Application content types"
+
+scripts[] = cm_crew_connect.js
+
+package = "Community Media"
+version = 7.x-2.1
+core = 7.x
+project_status_url = https://github.com/cm-advanced/cm_crew_connect
 
 files[] = includes/computed_field.inc
 files[] = includes/civicrm.inc
@@ -13,10 +20,17 @@ files[] = includes/postsave.inc
 files[] = includes/presave.inc
 files[] = includes/validate.inc
 files[] = includes/view_util.inc
+files[] = includes/rules_defaults.inc
+files[] = includes/crew_connect_opportunity_type.csv
+files[] = includes/crew_connect_position.csv
+files[] = includes/crew-connect-bundle-export.txt
 
 
-package = "Community Media Advanced"
-version = "7.x-1.2"
-core = "7.x"
-project = "cm_crew_connect"
-project_status_url = https://github.com/cm-advanced/cm_crew_connect
+dependencies[] = bundle_copy
+dependencies[] = civicrm
+dependencies[] = entity
+dependencies[] = entityreference
+dependencies[] = rules
+dependencies[] = views
+dependencies[] = views_php
+

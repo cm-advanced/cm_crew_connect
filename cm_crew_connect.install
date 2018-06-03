@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function cm_crew_connect_install() {
+
+// define path to includes dir because 
+// some api commands do not return correct 
+// values during an install 
+//$logpath = "/var/www/crewconnect-testing.phillycam.org/sites/all/modules/custom/cm_crew_connect/install.log";
+//  $path_to_drupal = drupal_realpath('cm_crew_connect.install');
+  $path_to_module = dirname(__FILE__);
+  $path_to_drupal = getcwd();
+//echo "\n";
+//  $path_to_module = drupal_get_path('module', 'cm_crew_connect');
+//  $path_to_includes = $path_to_drupal."/".$path_to_module."/includes/";
+  $path_to_includes = $path_to_module."/includes/";
+//  echo $path_to_includes;
+// create vocabularies
+//  file_put_contents($logpath, "test: \n", FILE_APPEND);
+//  file_put_contents($logpath, $path_to_includes."\n", FILE_APPEND);
+//  file_put_contents($logpath, $path_to_drupal."\n", FILE_APPEND);
+// the module requires vocabularies with certain machine names
+// for the term reference fields 
+// so these are hard coded 
+//
+// but the terms can be anything so those are pulled
+// from a text file in the module directory 
+// to allow for pre-install customization 
+
+// NOTE: this for now only works with flat vocabularies 
+
+  cm_crew_connect_vocabulary_create("Crew Connect Position", 
+                                 "crew_connect_position", 
+                                 "CMA Crew Connect Module: position taxonomy"
+                                 );
+
+  cm_crew_connect_vocabulary_create("Crew Connect Opportunity Type", 
+                                 "crew_connect_opportunity_type", 
+                                 "CMA Crew Connect Module: opportunity type taxonomy"
+                                 );
+
+  // load file for Crew Connect Position terms 
+  $crew_connect_position = array_map('str_getcsv', file($path_to_includes.'crew_connect_position.csv'));   
+  // get vid 
+  $crew_connect_position_vid = cm_crew_connect_vid_get("crew_connect_position");
+  // create terms 
+  foreach ($crew_connect_position as $term) {
+    cm_crew_connect_term_create($crew_connect_position_vid,$term[0]);
+  }    
+$where = drupal_get_path('module', 'cm_crew_connect');
+  // load file for Crew Connect Position terms 
+  $crew_connect_opportunity_type = array_map('str_getcsv', file($path_to_includes.'crew_connect_opportunity_type.csv'));  
+
+//dsm($crew_connect_opportunity_type);
+   // get vid 
+  $crew_connect_opportunity_type_vid = cm_crew_connect_vid_get("crew_connect_opportunity_type");
+  // create terms 
+  foreach ($crew_connect_opportunity_type as $term) {
+    cm_crew_connect_term_create($crew_connect_opportunity_type_vid,$term[0]);
+  }  
+  //flush caches after taxonomy and term creation 
+//  drupal_flush_all_caches(); 
+  //get the contents of the bundle export content type definitions
+  $bundles = file_get_contents($path_to_includes.'crew-connect-bundle-export.txt');
+  // setup a form array and call the bundle import submit function
+//  dsm($bundles);
+  $form=array();
+  $form_state=array();
+  $form_state['values']['macro']=$bundles;
+  bundle_copy_import_submit($form,$form_state);
+  //flush caches after content type creation 
+ $result = db_truncate('cache_rules')->execute();
+  drupal_flush_all_caches();
+  cache_clear_all();
+}
+
+
+/** 
+ * other helper functions
+ */
+ 
+// creates vocabulary  
+function cm_crew_connect_vocabulary_create($name, $machine_name, $description) {
+  // Create an empty flat vocabulary with default Drupal 7 fields.
+  // 
+  $vocabulary = (object) array(
+    'name'         => $name,
+    'machine_name' => $machine_name,
+    'description'  => $description,
+    'hierarchy'    => 1,
+    'module'       => 'taxonomy',
+    'weight'       => 0,
+  );
+
+  $result = taxonomy_vocabulary_save($vocabulary);
+  return $result;
+}
+
+// returns vid from machine name 
+function cm_crew_connect_vid_get($machine_name) {
+  $vocab = taxonomy_vocabulary_machine_name_load($machine_name);
+  $vid = $vocab->vid;
+  return $vid;
+}
+
+// creates new term 
+function cm_crew_connect_term_create($vid,$term) {
+  $newterm = new stdClass();
+  $newterm->name = $term;
+  $newterm->vid = $vid;
+  $newterm->parent = 0; // This tells taxonomy that this is a top-level term
+  $result = taxonomy_term_save($newterm);
+  return $result;
+} 
+ 

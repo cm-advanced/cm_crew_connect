@@ -1,0 +1,82 @@
+<?php
+/**
+ * @file implements hooks from cm_crew_connect
+ */
+////////////////////////////////////////////////////////////////////////
+//HOOKS
+
+/**
+ * implements hook_connect_request_form_alter()
+ *
+ * @param $form - the Crew Connect Request Form
+ * @param $request - the Crew Connect Request
+ * @param $project - the Project associated with the Crew Request
+ * @param $author_id - the uid of the user creating the Crew Request
+ */
+function custom_crew_connect_crew_connect_request_form_alter(&$form,
+							  $request,
+							  $project,
+							  $author_uid) {
+  
+}
+
+/**
+ * implements hook_crew_connect_application_form_alter()
+ *
+ * @param $form - the Crew Connect Application Form
+ * @param $application - the Crew Connect Application
+ * @param $project - the Project associated with the Crew Application
+ * @param $author_id - the uid of the user creating the Crew Application
+
+ */
+function custom_crew_connect_crew_connect_application_form_alter(&$form,
+								 $application,
+								 $author_uid) {
+}
+
+/**
+ * implements hook_crew_connect_search_form_alter()
+ * @param $form the exposed filter form that appears on search pages
+ */
+function custom_crew_connect_crew_connect_search_form_alter(&$form) {
+}
+
+
+/**
+ * implements hook_crew_connect_available_positions()
+ *
+ * @params $users a '+' deliminated string of user id's
+ * @params $positions a '+' deliminated string of position id's
+ *
+ * Set the variables to new values to change what appears in the 
+ * "Available Positions" Block on the crew connect page
+ */
+function custom_crew_connect_crew_connect_available_positions(&$users,
+							      &$positions) {
+
+}
+
+
+/**
+ * implements hook_crew_request_presave()
+ *
+ * @param $node - the Crew Request Node that is being saved, called at the end of
+ *                the the presave hook in cm_crew_connect
+ * @param $project - The Project associated with the Crew Request
+ * @param $position - The Position of the Crew Request, i.e. Editor
+ */
+function custom_crew_connect_crew_request_presave(&$node, $project, &$position) {
+
+}
+
+/**
+ * implements hook_event_creation_args()
+ * 
+ * @param $params the set of params about to be passed into civi to create an event
+ */
+function custom_crew_connect_event_creation_args(&$params, $node) {
+
+}
+
+
+

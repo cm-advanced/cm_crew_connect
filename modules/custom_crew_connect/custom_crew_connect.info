@@ -1,0 +1,11 @@
+name = Custom Crew Connect (template module)
+package = Community Media
+description = "Provides stubs of all the hooks declared in CM Crew Connect. This module can be used to test the hooks, or as a template to create your own custom module to work with CM Crew Connect"
+
+dependencies[] = cm_crew_connect
+
+core = 7.x
+files[] = custom_crew_connect.module
+
+
+

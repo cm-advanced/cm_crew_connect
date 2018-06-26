@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * This is not a real drupal hook but instead is called from both the 

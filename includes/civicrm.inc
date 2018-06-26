@@ -1,4 +1,4 @@
-<?
+<?php 
 /**
   * Get the the display name of the contact of the contact
   */

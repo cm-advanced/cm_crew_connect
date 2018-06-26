@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * function called from admin/crew_connect/positions

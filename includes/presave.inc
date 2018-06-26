@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * Implements hook_node_presave().  

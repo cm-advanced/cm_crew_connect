@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * @file page.inc
  * Defines the Crew Connect User tab as well as the search page

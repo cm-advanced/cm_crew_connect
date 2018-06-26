@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * This module contains functions that will return content to PHP fields in

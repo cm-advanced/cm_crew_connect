@@ -105,3 +105,103 @@ function cm_crew_connect_views_api() {
 			       'cm_crew_connect').'/includes'
 	       );
 }
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function cm_crew_connect_views_data_alter(&$data) {
+  // Signup to Crew field.
+  $data['node']['signup_to_crew'] = array(
+    'title' => t('Sign up to Crew Link'),
+    'help' => t('Used in crew_connect_search to produce signup link.'),
+    'field' => array(
+      'handler' => 'cm_crew_connect_handler_signup_to_crew',
+    ),
+  );
+
+  // Crew Details field.
+  $data['node']['crew_details'] = array(
+    'title' => t('Crew Details Link'),
+    'help' => t('Used in crew_connect_search to produce crew details link.'),
+    'field' => array(
+      'handler' => 'cm_crew_connect_handler_crew_details',
+    ),
+  );
+
+  // Add Request field.
+  $data['node']['add_request'] = array(
+    'title' => t('Add Request Link'),
+    'help' => t('Used in crew_connect_project_alerts to produce add request link.'),
+    'field' => array(
+      'handler' => 'cm_crew_connect_handler_add_request',
+    ),
+  );
+
+  // Delete Request field.
+  $data['node']['delete_request'] = array(
+    'title' => t('Delete Request Link'),
+    'help' => t('Used in admin display of crew_connect_search to produce delete request link.'),
+    'field' => array(
+      'handler' => 'cm_crew_connect_handler_delete_request',
+    ),
+  );
+
+  // Cancel Request field.
+  $data['node']['cancel_request'] = array(
+    'title' => t('Cancel Request Link'),
+    'help' => t('Used in Future Crew Requests display of crew_connect_crew_requests to produce cancel request link.'),
+    'field' => array(
+      'handler' => 'cm_crew_connect_handler_cancel_request',
+    ),
+  );
+
+  // Edit Request field.
+  $data['node']['edit_request'] = array(
+    'title' => t('Edit Request Link'),
+    'help' => t('Used in Future Crew Requests display of crew_connect_crew_requests to produce edit request link.'),
+    'field' => array(
+      'handler' => 'cm_crew_connect_handler_edit_request',
+    ),
+  );
+
+  // Applicant Name field.
+  $data['node']['applicant_name'] = array(
+    'title' => t('Applicant Name'),
+    'help' => t('Used in Future Crew Requests display of crew_connect_crew_requests to produce Applicant Name field.'),
+    'field' => array(
+      'handler' => 'cm_crew_connect_handler_applicant_name',
+    ),
+  );
+
+  // Header link.
+  $data['views']['header_search_link'] = array(
+    'title' => t('Crew Connect header search link'),
+    'help' => t("Global header used in the Page display of crew_connect_search."),
+    'area' => array(
+      'handler' => 'cm_crew_connect_handler_header_search_link',
+    ),
+  );
+
+  // Footer messages.
+  $data['views']['footer_messages'] = array(
+    'title' => t('Crew Connect footer messages'),
+    'help' => t("Global footer used in the Admin Search display of crew_connect_search."),
+    'area' => array(
+      'handler' => 'cm_crew_connect_handler_footer_messages',
+    ),
+  );
+}
+
+/**
+ * Implements hook_views_plugins().
+ */
+function cm_crew_connect_views_plugins() {
+  return array(
+    'argument default' => array(
+      'crew_node' => array(
+        'title' => t('Crew Node'),
+        'handler' => 'cm_crew_connect_argument_crew_node',
+      ),
+    ),
+  );
+}

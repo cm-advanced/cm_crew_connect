@@ -24,13 +24,19 @@ files[] = includes/rules_defaults.inc
 files[] = includes/crew_connect_opportunity_type.csv
 files[] = includes/crew_connect_position.csv
 files[] = includes/crew-connect-bundle-export.txt
-
-
+files[] = includes/cm_crew_connect_handler_signup_to_crew.inc
+files[] = includes/cm_crew_connect_handler_crew_details.inc
+files[] = includes/cm_crew_connect_handler_add_request.inc
+files[] = includes/cm_crew_connect_handler_delete_request.inc
+files[] = includes/cm_crew_connect_handler_cancel_request.inc
+files[] = includes/cm_crew_connect_handler_edit_request.inc
+files[] = includes/cm_crew_connect_handler_applicant_name.inc
+files[] = includes/cm_crew_connect_handler_header_search_link.inc
+files[] = includes/cm_crew_connect_handler_footer_messages.inc
+files[] = includes/cm_crew_connect_argument_crew_node.inc
 dependencies[] = bundle_copy
 dependencies[] = civicrm
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = rules
 dependencies[] = views
-dependencies[] = views_php
-

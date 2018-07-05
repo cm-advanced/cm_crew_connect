@@ -58,12 +58,8 @@ function cm_crew_connect_page($uid) {
   }
   //user has no projects
   else {
-    $project_block .=
-      "<ul><li>".
-      "You need an Active project to Request a Crew, please follow these ".
-      "links to sign up for a <a href='http://www.mnn.org/forms/series'>".
-      "Series</a> or <a href='http://www.mnn.org/forms/single'>Single</a>.".
-      "</li></ul>"; 
+    $project_block .= "<ul><li>".
+      t("You need an Active project to Request a Crew.")."</li></ul>"; 
   }
   $output .= "<div class='cm-box'>".$project_block."</div>";
 

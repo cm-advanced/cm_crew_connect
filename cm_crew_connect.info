@@ -4,7 +4,7 @@ description = "Provides helper files for managing crew connections. Relies on th
 scripts[] = cm_crew_connect.js
 
 package = "Community Media"
-version = 7.x-2.3
+version = 7.x-2.4
 core = 7.x
 project_status_url = https://github.com/cm-advanced/cm_crew_connect
 

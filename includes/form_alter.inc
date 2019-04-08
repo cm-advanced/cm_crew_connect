@@ -118,12 +118,12 @@ function cm_crew_connect_form_alter(&$form, &$form_state, $form_id) {
     }
 
     $allow_opt_out = variable_get('cc_email_optional', TRUE);
+
     if (!$allow_opt_out) {
-      $form['field_crew_share_email'][LANGUAGE_NONE]['#disabled'] = TRUE;
-      $form['field_crew_share_email'][LANGUAGE_NONE]['#description'] =
-	t("Sharing your email is required for this Request");
-      $form['field_crew_share_email'][LANGUAGE_NONE][0]['value']
-	['#default_value'] = 'yes';
+      unset($form['field_crew_share_email']);
+    }
+    else {
+      $form['field_requesters_pub_email'][LANGUAGE_NONE]['#required'] = 0;
     }
     $default_to_drupal_email = variable_get('cc_email_provide_default', TRUE);
     if ($default_to_drupal_email) {
@@ -214,11 +214,7 @@ function cm_crew_connect_form_alter(&$form, &$form_state, $form_id) {
 
     $allow_opt_out = variable_get('cc_email_optional', TRUE);
     if (!$allow_opt_out) {
-      $form['field_app_share_email'][LANGUAGE_NONE]['#disabled'] = TRUE;
-      $form['field_app_share_email'][LANGUAGE_NONE]['#description'] =
-	t("Sharing your email is required for this Request");
-      $form['field_app_share_email'][LANGUAGE_NONE][0]['value']
-	['#default_value'] = 'yes';
+      unset($form['field_app_share_email']);
     }
     $default_to_drupal_email = variable_get('cc_email_provide_default', TRUE);
     if ($default_to_drupal_email) {

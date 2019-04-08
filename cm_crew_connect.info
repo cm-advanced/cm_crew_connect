@@ -4,9 +4,11 @@ description = "Provides helper files for managing crew connections. Relies on th
 scripts[] = cm_crew_connect.js
 
 package = "Community Media"
-version = 7.x-2.4
+version = 7.x-2.5
 core = 7.x
 project_status_url = https://github.com/cm-advanced/cm_crew_connect
+
+configure = "admin/config/cm_crew_connect/settings"
 
 files[] = includes/computed_field.inc
 files[] = includes/civicrm.inc

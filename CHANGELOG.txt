@@ -1,0 +1,24 @@
+Please add changes for each release to this file. Add the latest to the top with
+a heading containing the date.
+
+Version 7.x-2.5 March 1st, 2019
+-----------------
+1. Fixed View Handlers
+  Updated the following handlers
+  --cm_crew_connect_handler_add_request.inc
+  --cm_crew_connect_handler_applicant_name.inc
+  --cm_crew_connect_handler_cancel_request.inc
+  --cm_crew_connect_handler_delete_request.inc
+  --cm_crew_connect_handler_edit_request.inc
+  --cm_crew_connect_handler_header_search_link.inc
+  --cm_crew_connect_handler_signup_to_crew.inc
+
+ Fields were not being put into the additional_fields variable on the handler object, therefore they were not able to display the correct text, often links.
+
+2. Updates to Views in cm_crew_connect.views.inc
+  Added pagers to the view of Projects and limited it to 10 per block on the main crew connect page, and 50 a block on the "See All pages"
+
+3. Updates to content types- (in bundle export) Changed label to "Email " rather than "Public Email", also put the conditional field below it to allow users to hide their email if it is allowed and also removed references to other content types that were not necessary.
+
+4. modified includes/form_alter.inc
+ if hiding email is not allowed via configuration, it will now hide the "do you want to share your email" fields

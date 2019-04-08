@@ -1930,6 +1930,7 @@ function cm_crew_connect_views_default_views() {
   //////////////////////////////////////////////////////////////
   //ADDING VIEW: crew_connect_crew_requests
   // Add view to list of views to provide.
+ 
   $view = new view();
   $view->name = 'crew_connect_crew_requests';
   $view->description = '';
@@ -1955,86 +1956,86 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'nid' => 'nid',
-    'title' => 'title',
-    'field_crew_producer_name' => 'field_crew_producer_name',
-    'field_crew_start_date' => 'field_crew_start_date',
-    'field_crew_start_time' => 'field_crew_start_time',
-    'field_crew_length_of_time' => 'field_crew_length_of_time',
-    'field_crew_opportunity_type' => 'field_crew_opportunity_type',
-    'field_crew_position_taxonomy' => 'field_crew_position_taxonomy',
-    'edit_request' => 'edit_request',
-    'applicant_name' => 'applicant_name',
-  );
+									 'nid' => 'nid',
+									 'title' => 'title',
+									 'field_crew_producer_name' => 'field_crew_producer_name',
+									 'field_crew_start_date' => 'field_crew_start_date',
+									 'field_crew_start_time' => 'field_crew_start_time',
+									 'field_crew_length_of_time' => 'field_crew_length_of_time',
+									 'field_crew_opportunity_type' => 'field_crew_opportunity_type',
+									 'field_crew_position_taxonomy' => 'field_crew_position_taxonomy',
+									 'edit_request' => 'edit_request',
+									 'applicant_name' => 'applicant_name',
+									 );
   $handler->display->display_options['style_options']['default'] = 'field_crew_start_date';
   $handler->display->display_options['style_options']['info'] = array(
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_producer_name' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_start_date' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_start_time' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_length_of_time' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_opportunity_type' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_position_taxonomy' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'edit_request' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'applicant_name' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+								      'nid' => array(
+										     'sortable' => 0,
+										     'default_sort_order' => 'asc',
+										     'align' => '',
+										     'separator' => '',
+										     'empty_column' => 0,
+										     ),
+								      'title' => array(
+										       'sortable' => 1,
+										       'default_sort_order' => 'asc',
+										       'align' => '',
+										       'separator' => '',
+										       'empty_column' => 0,
+										       ),
+								      'field_crew_producer_name' => array(
+													  'sortable' => 1,
+													  'default_sort_order' => 'asc',
+													  'align' => '',
+													  'separator' => '',
+													  'empty_column' => 0,
+													  ),
+								      'field_crew_start_date' => array(
+												       'sortable' => 1,
+												       'default_sort_order' => 'asc',
+												       'align' => '',
+												       'separator' => '',
+												       'empty_column' => 0,
+												       ),
+								      'field_crew_start_time' => array(
+												       'sortable' => 1,
+												       'default_sort_order' => 'asc',
+												       'align' => '',
+												       'separator' => '',
+												       'empty_column' => 0,
+												       ),
+								      'field_crew_length_of_time' => array(
+													   'sortable' => 1,
+													   'default_sort_order' => 'asc',
+													   'align' => '',
+													   'separator' => '',
+													   'empty_column' => 0,
+													   ),
+								      'field_crew_opportunity_type' => array(
+													     'sortable' => 1,
+													     'default_sort_order' => 'asc',
+													     'align' => '',
+													     'separator' => '',
+													     'empty_column' => 0,
+													     ),
+								      'field_crew_position_taxonomy' => array(
+													      'sortable' => 1,
+													      'default_sort_order' => 'asc',
+													      'align' => '',
+													      'separator' => '',
+													      'empty_column' => 0,
+													      ),
+								      'edit_request' => array(
+											      'align' => '',
+											      'separator' => '',
+											      'empty_column' => 0,
+											      ),
+								      'applicant_name' => array(
+												'align' => '',
+												'separator' => '',
+												'empty_column' => 0,
+												),
+								      );
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
@@ -2068,8 +2069,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_crew_project_id']['table'] = 'field_data_field_crew_project_id';
   $handler->display->display_options['fields']['field_crew_project_id']['field'] = 'field_crew_project_id';
   $handler->display->display_options['fields']['field_crew_project_id']['settings'] = array(
-    'link' => 0,
-  );
+											    'link' => 0,
+											    );
   /* Field: Content: Crew Position */
   $handler->display->display_options['fields']['field_crew_position_taxonomy']['id'] = 'field_crew_position_taxonomy';
   $handler->display->display_options['fields']['field_crew_position_taxonomy']['table'] = 'field_data_field_crew_position_taxonomy';
@@ -2120,14 +2121,14 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'crew_connect_request' => 'crew_connect_request',
-  );
+									 'crew_connect_request' => 'crew_connect_request',
+									 );
 
   /* Display: Future Crew Requests */
   $handler = $view->new_display('block', 'Future Crew Requests', 'future');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2158,13 +2159,13 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_crew_start_date']['field'] = 'field_crew_start_date';
   $handler->display->display_options['fields']['field_crew_start_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_crew_start_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
+											    'format_type' => 'short',
+											    'fromto' => 'both',
+											    'multiple_number' => '',
+											    'multiple_from' => '',
+											    'multiple_to' => '',
+											    'show_repeat_rule' => 'show',
+											    );
   /* Field: Content: Start Time */
   $handler->display->display_options['fields']['field_crew_start_time']['id'] = 'field_crew_start_time';
   $handler->display->display_options['fields']['field_crew_start_time']['table'] = 'field_data_field_crew_start_time';
@@ -2211,8 +2212,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'crew_connect_request' => 'crew_connect_request',
-  );
+									 'crew_connect_request' => 'crew_connect_request',
+									 );
   /* Filter criterion: Content: Start Date (field_crew_start_date) */
   $handler->display->display_options['filters']['field_crew_start_date_value']['id'] = 'field_crew_start_date_value';
   $handler->display->display_options['filters']['field_crew_start_date_value']['table'] = 'field_data_field_crew_start_date';
@@ -2224,7 +2225,7 @@ function cm_crew_connect_views_default_views() {
   $handler = $view->new_display('block', 'Past Crew Requests', 'past');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2256,13 +2257,13 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_crew_start_date']['field'] = 'field_crew_start_date';
   $handler->display->display_options['fields']['field_crew_start_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_crew_start_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
+											    'format_type' => 'short',
+											    'fromto' => 'both',
+											    'multiple_number' => '',
+											    'multiple_from' => '',
+											    'multiple_to' => '',
+											    'show_repeat_rule' => 'show',
+											    );
   /* Field: Content: Start Time */
   $handler->display->display_options['fields']['field_crew_start_time']['id'] = 'field_crew_start_time';
   $handler->display->display_options['fields']['field_crew_start_time']['table'] = 'field_data_field_crew_start_time';
@@ -2304,8 +2305,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'crew_connect_request' => 'crew_connect_request',
-  );
+									 'crew_connect_request' => 'crew_connect_request',
+									 );
   /* Filter criterion: Content: Start Date (field_crew_start_date) */
   $handler->display->display_options['filters']['field_crew_start_date_value']['id'] = 'field_crew_start_date_value';
   $handler->display->display_options['filters']['field_crew_start_date_value']['table'] = 'field_data_field_crew_start_date';
@@ -2317,7 +2318,7 @@ function cm_crew_connect_views_default_views() {
   $handler = $view->new_display('block', 'Future Crew Requests (incl cancel link)', 'block_1');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2348,13 +2349,13 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_crew_start_date']['field'] = 'field_crew_start_date';
   $handler->display->display_options['fields']['field_crew_start_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_crew_start_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
+											    'format_type' => 'short',
+											    'fromto' => 'both',
+											    'multiple_number' => '',
+											    'multiple_from' => '',
+											    'multiple_to' => '',
+											    'show_repeat_rule' => 'show',
+											    );
   /* Field: Content: Start Time */
   $handler->display->display_options['fields']['field_crew_start_time']['id'] = 'field_crew_start_time';
   $handler->display->display_options['fields']['field_crew_start_time']['table'] = 'field_data_field_crew_start_time';
@@ -2406,51 +2407,15 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'crew_connect_request' => 'crew_connect_request',
-  );
+									 'crew_connect_request' => 'crew_connect_request',
+									 );
   /* Filter criterion: Content: Start Date (field_crew_start_date) */
   $handler->display->display_options['filters']['field_crew_start_date_value']['id'] = 'field_crew_start_date_value';
   $handler->display->display_options['filters']['field_crew_start_date_value']['table'] = 'field_data_field_crew_start_date';
   $handler->display->display_options['filters']['field_crew_start_date_value']['field'] = 'field_crew_start_date_value';
   $handler->display->display_options['filters']['field_crew_start_date_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_crew_start_date_value']['default_date'] = 'now';
-  $translatables['crew_connect_crew_requests'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('<h3><strong>My Future Project Crew Requests:</strong></h3>'),
-    t('Title'),
-    t('Project'),
-    t('Crew Position'),
-    t('Request Status'),
-    t('Application Status'),
-    t('Apply For Shift'),
-    t('All'),
-    t('Future Crew Requests'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Crew Request'),
-    t('Producer\'s Name'),
-    t('Date'),
-    t('Time'),
-    t('Length of Shift'),
-    t('[field_crew_length_of_time]  hours'),
-    t('Opportunity Type'),
-    t('Edit'),
-    t('Applicant Name'),
-    t('Past Crew Requests'),
-    t('Future Crew Requests (incl cancel link)'),
-    t('Cancel'),
-  );
+	      
 
   $views[$view->name] = $view;
   //FINISHED ADDING VIEW
@@ -2474,6 +2439,7 @@ function cm_crew_connect_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Crew Connect: Project Alerts';
   $handler->display->display_options['css_class'] = 'field-group-fieldset';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'use crew connect';
@@ -2483,34 +2449,34 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
-    'nid' => 'nid',
-    'field_is_crew_needed' => 'field_is_crew_needed',
-  );
+									 'title' => 'title',
+									 'nid' => 'nid',
+									 'field_is_crew_needed' => 'field_is_crew_needed',
+									 );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_is_crew_needed' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+								      'title' => array(
+										       'sortable' => 0,
+										       'default_sort_order' => 'asc',
+										       'align' => '',
+										       'separator' => '',
+										       'empty_column' => 0,
+										       ),
+								      'nid' => array(
+										     'sortable' => 0,
+										     'default_sort_order' => 'asc',
+										     'align' => '',
+										     'separator' => '',
+										     'empty_column' => 0,
+										     ),
+								      'field_is_crew_needed' => array(
+												      'sortable' => 0,
+												      'default_sort_order' => 'asc',
+												      'align' => '',
+												      'separator' => '',
+												      'empty_column' => 0,
+												      ),
+								      );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -2519,11 +2485,10 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = 'node/[nid]';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   /* Contextual filter: Content: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
@@ -2546,12 +2511,18 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'cm_project' => 'cm_project',
-  );
+									 'cm_project' => 'cm_project',
+									 );
 
   /* Display: My Projects */
   $handler = $view->new_display('block', 'My Projects', 'crew_enabled');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -2597,30 +2568,16 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'cm_project' => 'cm_project',
-  );
-  /* Filter criterion: Content: Group (group_group) */
+									 'cm_project' => 'cm_project',
+									 );
+  /* Filter criterion: Content: Project (group_group) */
   $handler->display->display_options['filters']['group_group_value']['id'] = 'group_group_value';
   $handler->display->display_options['filters']['group_group_value']['table'] = 'field_data_group_group';
   $handler->display->display_options['filters']['group_group_value']['field'] = 'group_group_value';
   $handler->display->display_options['filters']['group_group_value']['value'] = array(
-    1 => '1',
-  );
-  $translatables['crew_connect_project_alerts'] = array(
-    t('Master'),
-    t('Crew Connect: Project Alerts'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('node/[nid]'),
-    t('All'),
-    t('My Projects'),
-    t('<h3><strong>My Projects:</strong></h3>'),
-  );
-  
+										      1 => '1',
+										      );
+    
   $views[$view->name] = $view;
   //FINISHED ADDING VIEW
   ///////////////////////////////////////////////////////////////
@@ -2728,99 +2685,99 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'nid' => 'nid',
-    'uid' => 'uid',
-    'title' => 'title',
-    'field_crew_producer_name' => 'field_crew_producer_name',
-    'picture' => 'picture',
-    'field_crew_start_date' => 'field_crew_start_date',
-    'field_crew_start_time' => 'field_crew_start_time',
-    'field_crew_length_of_time' => 'field_crew_length_of_time',
-    'field_crew_opportunity_type' => 'field_crew_opportunity_type',
-    'field_crew_position_taxonomy' => 'field_crew_position_taxonomy',
-    'signup_to_crew' => 'signup_to_crew',
-  );
+									 'nid' => 'nid',
+									 'uid' => 'uid',
+									 'title' => 'title',
+									 'field_crew_producer_name' => 'field_crew_producer_name',
+									 'picture' => 'picture',
+									 'field_crew_start_date' => 'field_crew_start_date',
+									 'field_crew_start_time' => 'field_crew_start_time',
+									 'field_crew_length_of_time' => 'field_crew_length_of_time',
+									 'field_crew_opportunity_type' => 'field_crew_opportunity_type',
+									 'field_crew_position_taxonomy' => 'field_crew_position_taxonomy',
+									 'signup_to_crew' => 'signup_to_crew',
+									 );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'uid' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_producer_name' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'picture' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_start_date' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_start_time' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_length_of_time' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_opportunity_type' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_crew_position_taxonomy' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'signup_to_crew' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+								      'nid' => array(
+										     'sortable' => 0,
+										     'default_sort_order' => 'asc',
+										     'align' => '',
+										     'separator' => '',
+										     'empty_column' => 0,
+										     ),
+								      'uid' => array(
+										     'align' => '',
+										     'separator' => '',
+										     'empty_column' => 0,
+										     ),
+								      'title' => array(
+										       'sortable' => 1,
+										       'default_sort_order' => 'asc',
+										       'align' => '',
+										       'separator' => '',
+										       'empty_column' => 0,
+										       ),
+								      'field_crew_producer_name' => array(
+													  'sortable' => 1,
+													  'default_sort_order' => 'asc',
+													  'align' => '',
+													  'separator' => '',
+													  'empty_column' => 0,
+													  ),
+								      'picture' => array(
+											 'sortable' => 0,
+											 'default_sort_order' => 'asc',
+											 'align' => '',
+											 'separator' => '',
+											 'empty_column' => 0,
+											 ),
+								      'field_crew_start_date' => array(
+												       'sortable' => 1,
+												       'default_sort_order' => 'asc',
+												       'align' => '',
+												       'separator' => '',
+												       'empty_column' => 0,
+												       ),
+								      'field_crew_start_time' => array(
+												       'sortable' => 1,
+												       'default_sort_order' => 'asc',
+												       'align' => '',
+												       'separator' => '',
+												       'empty_column' => 0,
+												       ),
+								      'field_crew_length_of_time' => array(
+													   'sortable' => 1,
+													   'default_sort_order' => 'asc',
+													   'align' => '',
+													   'separator' => '',
+													   'empty_column' => 0,
+													   ),
+								      'field_crew_opportunity_type' => array(
+													     'sortable' => 1,
+													     'default_sort_order' => 'asc',
+													     'align' => '',
+													     'separator' => '',
+													     'empty_column' => 0,
+													     ),
+								      'field_crew_position_taxonomy' => array(
+													      'sortable' => 1,
+													      'default_sort_order' => 'asc',
+													      'align' => '',
+													      'separator' => '',
+													      'empty_column' => 0,
+													      ),
+								      'signup_to_crew' => array(
+												'align' => '',
+												'separator' => '',
+												'empty_column' => 0,
+												),
+								      );
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
@@ -2867,8 +2824,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_crew_project_id']['table'] = 'field_data_field_crew_project_id';
   $handler->display->display_options['fields']['field_crew_project_id']['field'] = 'field_crew_project_id';
   $handler->display->display_options['fields']['field_crew_project_id']['settings'] = array(
-    'link' => 0,
-  );
+											    'link' => 0,
+											    );
   /* Field: Content: Status */
   $handler->display->display_options['fields']['field_crew_status']['id'] = 'field_crew_status';
   $handler->display->display_options['fields']['field_crew_status']['table'] = 'field_data_field_crew_status';
@@ -2904,8 +2861,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'crew_connect_request' => 'crew_connect_request',
-  );
+									 'crew_connect_request' => 'crew_connect_request',
+									 );
 
   /* Display: Available Crew Requests */
   $handler = $view->new_display('block', 'Available Crew Requests', 'block');
@@ -2978,13 +2935,13 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_crew_start_date']['field'] = 'field_crew_start_date';
   $handler->display->display_options['fields']['field_crew_start_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_crew_start_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
+											    'format_type' => 'short',
+											    'fromto' => 'both',
+											    'multiple_number' => '',
+											    'multiple_from' => '',
+											    'multiple_to' => '',
+											    'show_repeat_rule' => 'show',
+											    );
   /* Field: Content: Start Time */
   $handler->display->display_options['fields']['field_crew_start_time']['id'] = 'field_crew_start_time';
   $handler->display->display_options['fields']['field_crew_start_time']['table'] = 'field_data_field_crew_start_time';
@@ -3067,8 +3024,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'crew_connect_request' => 'crew_connect_request',
-  );
+									 'crew_connect_request' => 'crew_connect_request',
+									 );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Start Date (field_crew_start_date) */
   $handler->display->display_options['filters']['field_crew_start_date_value']['id'] = 'field_crew_start_date_value';
@@ -3083,8 +3040,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['field_crew_status_value']['field'] = 'field_crew_status_value';
   $handler->display->display_options['filters']['field_crew_status_value']['operator'] = 'not';
   $handler->display->display_options['filters']['field_crew_status_value']['value'] = array(
-    'cancelled' => 'cancelled',
-  );
+											    'cancelled' => 'cancelled',
+											    );
   $handler->display->display_options['filters']['field_crew_status_value']['group'] = 1;
   $handler->display->display_options['filters']['field_crew_status_value']['expose']['operator_id'] = 'field_crew_status_value_op';
   $handler->display->display_options['filters']['field_crew_status_value']['expose']['label'] = 'Status (field_crew_status)';
@@ -3108,58 +3065,58 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['field_crew_start_date_value_1']['expose']['operator'] = 'field_crew_start_date_value_1_op';
   $handler->display->display_options['filters']['field_crew_start_date_value_1']['expose']['identifier'] = 'field_crew_start_date_value_1';
   $handler->display->display_options['filters']['field_crew_start_date_value_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    27 => 0,
-    7 => 0,
-    16 => 0,
-    14 => 0,
-    26 => 0,
-    11 => 0,
-    12 => 0,
-    6 => 0,
-    13 => 0,
-    33 => 0,
-    4 => 0,
-    30 => 0,
-    28 => 0,
-    32 => 0,
-    18 => 0,
-    22 => 0,
-    20 => 0,
-    25 => 0,
-    23 => 0,
-    31 => 0,
-    15 => 0,
-    34 => 0,
-    17 => 0,
-    21 => 0,
-    19 => 0,
-    35 => 0,
-    49 => 0,
-    44 => 0,
-    37 => 0,
-    43 => 0,
-    36 => 0,
-    57 => 0,
-    47 => 0,
-    56 => 0,
-    40 => 0,
-    50 => 0,
-    46 => 0,
-    39 => 0,
-    38 => 0,
-    41 => 0,
-    45 => 0,
-    42 => 0,
-    51 => 0,
-    48 => 0,
-    52 => 0,
-    55 => 0,
-    53 => 0,
-    54 => 0,
-  );
+														     2 => '2',
+														     1 => 0,
+														     3 => 0,
+														     27 => 0,
+														     7 => 0,
+														     16 => 0,
+														     14 => 0,
+														     26 => 0,
+														     11 => 0,
+														     12 => 0,
+														     6 => 0,
+														     13 => 0,
+														     33 => 0,
+														     4 => 0,
+														     30 => 0,
+														     28 => 0,
+														     32 => 0,
+														     18 => 0,
+														     22 => 0,
+														     20 => 0,
+														     25 => 0,
+														     23 => 0,
+														     31 => 0,
+														     15 => 0,
+														     34 => 0,
+														     17 => 0,
+														     21 => 0,
+														     19 => 0,
+														     35 => 0,
+														     49 => 0,
+														     44 => 0,
+														     37 => 0,
+														     43 => 0,
+														     36 => 0,
+														     57 => 0,
+														     47 => 0,
+														     56 => 0,
+														     40 => 0,
+														     50 => 0,
+														     46 => 0,
+														     39 => 0,
+														     38 => 0,
+														     41 => 0,
+														     45 => 0,
+														     42 => 0,
+														     51 => 0,
+														     48 => 0,
+														     52 => 0,
+														     55 => 0,
+														     53 => 0,
+														     54 => 0,
+														     );
   $handler->display->display_options['filters']['field_crew_start_date_value_1']['form_type'] = 'date_popup';
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
@@ -3174,36 +3131,36 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    3 => 0,
-    1 => 0,
-    44 => 0,
-    8 => 0,
-    14 => 0,
-    10 => 0,
-    6 => 0,
-    11 => 0,
-    4 => 0,
-    51 => 0,
-    16 => 0,
-    49 => 0,
-    17 => 0,
-    20 => 0,
-    50 => 0,
-    48 => 0,
-    39 => 0,
-    28 => 0,
-    29 => 0,
-    45 => 0,
-    37 => 0,
-    34 => 0,
-    35 => 0,
-    46 => 0,
-    43 => 0,
-    47 => 0,
-    32 => 0,
-    52 => 0,
-  );
+											     2 => '2',
+											     3 => 0,
+											     1 => 0,
+											     44 => 0,
+											     8 => 0,
+											     14 => 0,
+											     10 => 0,
+											     6 => 0,
+											     11 => 0,
+											     4 => 0,
+											     51 => 0,
+											     16 => 0,
+											     49 => 0,
+											     17 => 0,
+											     20 => 0,
+											     50 => 0,
+											     48 => 0,
+											     39 => 0,
+											     28 => 0,
+											     29 => 0,
+											     45 => 0,
+											     37 => 0,
+											     34 => 0,
+											     35 => 0,
+											     46 => 0,
+											     43 => 0,
+											     47 => 0,
+											     32 => 0,
+											     52 => 0,
+											     );
   /* Filter criterion: Content: Producer&#039;s Name (field_crew_producer_name) */
   $handler->display->display_options['filters']['field_crew_producer_name_value']['id'] = 'field_crew_producer_name_value';
   $handler->display->display_options['filters']['field_crew_producer_name_value']['table'] = 'field_data_field_crew_producer_name';
@@ -3216,36 +3173,36 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['field_crew_producer_name_value']['expose']['operator'] = 'field_crew_producer_name_value_op';
   $handler->display->display_options['filters']['field_crew_producer_name_value']['expose']['identifier'] = 'field_crew_producer_name_value';
   $handler->display->display_options['filters']['field_crew_producer_name_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    3 => 0,
-    1 => 0,
-    44 => 0,
-    8 => 0,
-    14 => 0,
-    10 => 0,
-    6 => 0,
-    11 => 0,
-    4 => 0,
-    51 => 0,
-    16 => 0,
-    49 => 0,
-    17 => 0,
-    20 => 0,
-    50 => 0,
-    48 => 0,
-    39 => 0,
-    28 => 0,
-    29 => 0,
-    45 => 0,
-    37 => 0,
-    34 => 0,
-    35 => 0,
-    46 => 0,
-    43 => 0,
-    47 => 0,
-    32 => 0,
-    52 => 0,
-  );
+														      2 => '2',
+														      3 => 0,
+														      1 => 0,
+														      44 => 0,
+														      8 => 0,
+														      14 => 0,
+														      10 => 0,
+														      6 => 0,
+														      11 => 0,
+														      4 => 0,
+														      51 => 0,
+														      16 => 0,
+														      49 => 0,
+														      17 => 0,
+														      20 => 0,
+														      50 => 0,
+														      48 => 0,
+														      39 => 0,
+														      28 => 0,
+														      29 => 0,
+														      45 => 0,
+														      37 => 0,
+														      34 => 0,
+														      35 => 0,
+														      46 => 0,
+														      43 => 0,
+														      47 => 0,
+														      32 => 0,
+														      52 => 0,
+														      );
   /* Filter criterion: Content: Crew Position (field_crew_position_taxonomy) */
   $handler->display->display_options['filters']['field_crew_position_taxonomy_tid']['id'] = 'field_crew_position_taxonomy_tid';
   $handler->display->display_options['filters']['field_crew_position_taxonomy_tid']['table'] = 'field_data_field_crew_position_taxonomy';
@@ -3257,36 +3214,36 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['field_crew_position_taxonomy_tid']['expose']['operator'] = 'field_crew_position_taxonomy_tid_op';
   $handler->display->display_options['filters']['field_crew_position_taxonomy_tid']['expose']['identifier'] = 'field_crew_position_taxonomy_tid';
   $handler->display->display_options['filters']['field_crew_position_taxonomy_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    3 => 0,
-    1 => 0,
-    44 => 0,
-    8 => 0,
-    14 => 0,
-    10 => 0,
-    6 => 0,
-    11 => 0,
-    4 => 0,
-    51 => 0,
-    16 => 0,
-    49 => 0,
-    17 => 0,
-    20 => 0,
-    50 => 0,
-    48 => 0,
-    39 => 0,
-    28 => 0,
-    29 => 0,
-    45 => 0,
-    37 => 0,
-    34 => 0,
-    35 => 0,
-    46 => 0,
-    43 => 0,
-    47 => 0,
-    32 => 0,
-    52 => 0,
-  );
+															2 => '2',
+															3 => 0,
+															1 => 0,
+															44 => 0,
+															8 => 0,
+															14 => 0,
+															10 => 0,
+															6 => 0,
+															11 => 0,
+															4 => 0,
+															51 => 0,
+															16 => 0,
+															49 => 0,
+															17 => 0,
+															20 => 0,
+															50 => 0,
+															48 => 0,
+															39 => 0,
+															28 => 0,
+															29 => 0,
+															45 => 0,
+															37 => 0,
+															34 => 0,
+															35 => 0,
+															46 => 0,
+															43 => 0,
+															47 => 0,
+															32 => 0,
+															52 => 0,
+															);
   $handler->display->display_options['filters']['field_crew_position_taxonomy_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_crew_position_taxonomy_tid']['vocabulary'] = 'crew_connect_position';
 
@@ -3342,8 +3299,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_app_producer']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_app_producer']['type'] = 'entityreference_entity_id';
   $handler->display->display_options['fields']['field_app_producer']['settings'] = array(
-    'link' => 0,
-  );
+											 'link' => 0,
+											 );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -3364,13 +3321,13 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_crew_start_date']['table'] = 'field_data_field_crew_start_date';
   $handler->display->display_options['fields']['field_crew_start_date']['field'] = 'field_crew_start_date';
   $handler->display->display_options['fields']['field_crew_start_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
+											    'format_type' => 'short',
+											    'fromto' => 'both',
+											    'multiple_number' => '',
+											    'multiple_from' => '',
+											    'multiple_to' => '',
+											    'show_repeat_rule' => 'show',
+											    );
   /* Field: Content: Start Time */
   $handler->display->display_options['fields']['field_crew_start_time']['id'] = 'field_crew_start_time';
   $handler->display->display_options['fields']['field_crew_start_time']['table'] = 'field_data_field_crew_start_time';
@@ -3414,8 +3371,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'crew_connect_request' => 'crew_connect_request',
-  );
+									 'crew_connect_request' => 'crew_connect_request',
+									 );
   /* Filter criterion: Content: Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
@@ -3459,8 +3416,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_app_producer']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_app_producer']['type'] = 'entityreference_entity_id';
   $handler->display->display_options['fields']['field_app_producer']['settings'] = array(
-    'link' => 0,
-  );
+											 'link' => 0,
+											 );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -3474,13 +3431,13 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['fields']['field_crew_start_date']['table'] = 'field_data_field_crew_start_date';
   $handler->display->display_options['fields']['field_crew_start_date']['field'] = 'field_crew_start_date';
   $handler->display->display_options['fields']['field_crew_start_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
+											    'format_type' => 'short',
+											    'fromto' => 'both',
+											    'multiple_number' => '',
+											    'multiple_from' => '',
+											    'multiple_to' => '',
+											    'show_repeat_rule' => 'show',
+											    );
   /* Field: Content: Start Time */
   $handler->display->display_options['fields']['field_crew_start_time']['id'] = 'field_crew_start_time';
   $handler->display->display_options['fields']['field_crew_start_time']['table'] = 'field_data_field_crew_start_time';
@@ -3524,8 +3481,8 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'crew_connect_request' => 'crew_connect_request',
-  );
+									 'crew_connect_request' => 'crew_connect_request',
+									 );
   /* Filter criterion: Content: Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
@@ -3538,50 +3495,6 @@ function cm_crew_connect_views_default_views() {
   $handler->display->display_options['filters']['field_crew_start_date_value']['field'] = 'field_crew_start_date_value';
   $handler->display->display_options['filters']['field_crew_start_date_value']['operator'] = '<';
   $handler->display->display_options['filters']['field_crew_start_date_value']['default_date'] = 'now';
-  $translatables['crew_connect_volunteer_for_a_crew'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Either you do not have the appropriate Certification, or their are currently no opportunities for this position.'),
-    t('Content entity referenced from field_crew_project_id'),
-    t('Content referencing Content from field_app_crew_connect_node'),
-    t('Title'),
-    t('Project'),
-    t('Request Status'),
-    t('Application Status'),
-    t('Apply For Shift'),
-    t('Available Crew Requests'),
-    t('<a href="/crew-connect/requests-search">See All Available Crew Positions</a>'),
-    t('author'),
-    t('Project Title'),
-    t('Producer\'s Name'),
-    t('Date'),
-    t('Time'),
-    t('Length of Shift'),
-    t('[field_crew_length_of_time]  hours'),
-    t('Opportunity Type'),
-    t('Crew Position'),
-    t('More Info'),
-    t('All'),
-    t('Status (field_crew_status)'),
-    t('My Upcoming Crew Events'),
-    t('You have no upcoming shifts.'),
-    t('Start Date'),
-    t('Start Time'),
-    t('My Past Crew Events'),
-    t('Crew Request'),
-  );
 
   $views[$view->name] = $view;
   //FINISHED ADDING VIEW

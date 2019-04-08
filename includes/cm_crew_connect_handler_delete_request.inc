@@ -16,12 +16,16 @@ class cm_crew_connect_handler_delete_request extends views_handler_field {
    */
   function construct() {
     parent::construct();
+    $this->additional_fields['nid'] = 'nid';
   }
 
   /**
    * Loads additional fields.
    */
-  function query() {}
+  function query() {
+    $this->ensure_my_table();
+    $this->add_additional_fields();
+  }
 
   /**
    * Default options form.
@@ -42,9 +46,13 @@ class cm_crew_connect_handler_delete_request extends views_handler_field {
    * Renders the field handler.
    */
   function render($values) {
+    //this is the nid of the request
     $nid = $this->get_value($values, 'nid');
 
-    if ($nid) {
+    //check for an applicant, don't allow delete if we have one
+    $app_node = cm_crew_connect_get_application_for_request($nid);
+
+    if (!empty($app_node)) {
       return 'N/A';
     }
 

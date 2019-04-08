@@ -16,12 +16,16 @@ class cm_crew_connect_handler_signup_to_crew extends views_handler_field {
    */
   function construct() {
     parent::construct();
+    $this->additional_fields['nid'] = 'nid';
   }
 
   /**
    * Loads additional fields.
    */
-  function query() {}
+  function query() {
+    $this->ensure_my_table();
+    $this->add_additional_fields();
+  }
 
   /**
    * Default options form.

@@ -17,12 +17,17 @@ class cm_crew_connect_handler_add_request extends views_handler_field {
    */
   function construct() {
     parent::construct();
+    $this->additional_fields['nid'] = 'nid';
+    $this->additional_fields['title'] = 'title';
   }
 
   /**
    * Loads additional fields.
    */
-  function query() {}
+  function query() {
+    $this->ensure_my_table();
+    $this->add_additional_fields();
+  }
 
   /**
    * Default options form.

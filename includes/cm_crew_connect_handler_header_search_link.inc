@@ -16,10 +16,9 @@ class cm_crew_connect_handler_header_search_link extends views_handler_area {
   function render($empty = FALSE) {
     $ret = '';
     $path = 'admin/cm_crew_connect/search';
-
     if ($router_item = menu_get_item($path)) {
       // The user has access to the page in $path.
-      if (isset($router_item['access'])) {
+      if (isset($router_item['access']) && $router_item['access']) {
         $ret = '<h2><strong>' . l('Admin Search', $path) . '</strong></h2>';
       }
     }
